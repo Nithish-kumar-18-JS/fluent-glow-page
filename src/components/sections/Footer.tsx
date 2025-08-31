@@ -116,7 +116,7 @@ const Footer = () => {
               <span className="text-sm text-muted-foreground">🌐 English</span>
             </div>
             <div className="text-sm text-muted-foreground">
-              Made with ❤️ for language learners
+              Made with ❤️ - Nithish kumar
             </div>
           </div>
         </motion.div>

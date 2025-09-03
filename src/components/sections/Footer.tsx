@@ -22,10 +22,10 @@ const Footer = () => {
       { name: "Status", href: "#status" }
     ],
     Legal: [
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Terms of Service", href: "#terms" },
-      { name: "Cookie Policy", href: "#cookies" },
-      { name: "GDPR", href: "#gdpr" }
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms-conditions" },
+      { name: "Cookie Policy", href: "/cookie-policy" },
+      { name: "GDPR", href: "/gdpr" }
     ]
   };
 

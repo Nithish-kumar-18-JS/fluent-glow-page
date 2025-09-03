@@ -33,6 +33,18 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-primary/80" />
+        <div className="absolute top-4 right-4 z-10">
+         <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-8"
+        >
+        <GlassButton variant="hero" size="lg" className="hover:border-primary/60">
+              Login
+        </GlassButton>
+        </motion.div>
+        </div>
       </div>
       
       {/* Floating Particles */}
@@ -89,9 +101,9 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <GlassButton variant="primary" size="xl" className="group">
-              <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Start Free Trial
+            <GlassButton variant="outline" size="xl" className="group">
+              <img src="google.svg" alt="google" className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              Sign up with google
             </GlassButton>
             
             <GlassButton variant="hero" size="xl">

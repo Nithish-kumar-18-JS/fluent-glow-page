@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Sparkles, MessageCircle } from "lucide-react";
@@ -106,9 +107,12 @@ const HeroSection = () => {
               Sign up with google
             </GlassButton>
             
-            <GlassButton variant="hero" size="xl">
-              Watch Demo
-            </GlassButton>
+            <Link to="/dashboard">
+              <GlassButton variant="hero" size="xl" className="group">
+                View Dashboard
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </GlassButton>
+            </Link>
           </motion.div>
 
           {/* Stats */}

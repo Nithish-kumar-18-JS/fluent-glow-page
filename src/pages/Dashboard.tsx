@@ -8,13 +8,13 @@ import Vocabulary from "@/components/dashboard/pages/Vocabulary";
 import Progress from "@/components/dashboard/pages/Progress";
 import Settings from "@/components/dashboard/pages/Settings";
 
-const Dashboard = () => {
+const Dashboard = ({ user }: { user: any }) => {
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="min-h-screen flex w-full">
         <DashboardSidebar />
         <div className="flex-1 flex flex-col">
-          <DashboardHeader />
+          <DashboardHeader user={user} />
           <main className="flex-1 p-6">
             <Routes>
               <Route path="/" element={<Home />} />

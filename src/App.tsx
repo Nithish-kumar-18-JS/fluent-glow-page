@@ -9,6 +9,7 @@ import PrivacyPolicy from "./pages/prelogin/PrivacyPolicy";
 import TermsConditions from "./pages/prelogin/Terms_conditions";
 import CookiePolicy from "./pages/prelogin/CookiePolicy";
 import GdprPage from "./pages/prelogin/GdprPage";
+import ProtectedLayout from "./layouts/protectedLayout";
 import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
@@ -21,7 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="/dashboard/*" element={<ProtectedLayout><Dashboard/></ProtectedLayout>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-conditions" element={<TermsConditions />} />

@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Sparkles, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+import { auth, googleProvider } from "../../../firebase.js";
+import { signInWithPopup, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+  
 
 const ParticleField = () => {
   return (
@@ -26,6 +32,19 @@ const ParticleField = () => {
 };
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(() => auth.currentUser);
+   useEffect(() => {
+    const unsub = auth.onAuthStateChanged(setUser);
+    return () => unsub();
+  }, []);
+
+  const handleLoginWithGoogle = async () => {
+    await signInWithPopup(auth, googleProvider); // or signInWithRedirect(auth, googleProvider)
+    // redirect to home
+    navigate("/dashboard");
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -102,9 +121,9 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <GlassButton variant="outline" size="xl" className="group">
+            <GlassButton variant="outline" size="xl" className="group" onClick={handleLoginWithGoogle}>
               <img src="google.svg" alt="google" className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Sign up with google
+              Sign in with google
             </GlassButton>
             
             <Link to="/dashboard">

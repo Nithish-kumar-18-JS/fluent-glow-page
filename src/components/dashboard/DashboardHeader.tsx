@@ -2,8 +2,9 @@ import { Bell, User } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useState } from "react";
 
-export function DashboardHeader() {
+export function DashboardHeader({ user }: { user: any }) {
   return (
     <header className="h-16 glass-panel border-b border-glass-border/50 flex items-center justify-between px-6">
       <div className="flex items-center gap-4">

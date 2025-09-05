@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Home, MessageSquare, BookOpen, TrendingUp, Settings, LogOut } from "lucide-react";
+import { auth } from "../../../firebase.js";
 import {
   Sidebar,
   SidebarContent,
@@ -28,6 +29,7 @@ export function DashboardSidebar() {
   const location = useLocation();
   const currentPath = location.pathname;
   const collapsed = state === "collapsed";
+  const navigate = useNavigate();
 
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
@@ -81,6 +83,10 @@ export function DashboardSidebar() {
           <GlassButton
             variant="outline"
             size="sm"
+            onClick={() => {
+              auth.signOut();
+              navigate("/");  
+            }}
             className="w-full justify-start text-muted-foreground hover:text-foreground"
           >
             <LogOut className="h-4 w-4" />

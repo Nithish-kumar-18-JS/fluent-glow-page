@@ -72,9 +72,9 @@ const CTASection = () => {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </GlassButton>
               
-              <GlassButton variant="ghost" size="xl">
+              {/* <GlassButton variant="ghost" size="xl">
                 Book a Demo Call
-              </GlassButton>
+              </GlassButton> */}
             </motion.div>
             
             {/* Trust Signals */}

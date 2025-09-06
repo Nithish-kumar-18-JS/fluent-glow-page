@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Sparkles, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import heroImage from "@/assets/hero-bg-2.jpg";
 import { auth, googleProvider } from "../../../firebase.js";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { verifyUser } from "@/apis/auth/index.js";
 
   
 
@@ -40,10 +41,24 @@ const HeroSection = () => {
   }, []);
 
   const handleLoginWithGoogle = async () => {
-    await signInWithPopup(auth, googleProvider); // or signInWithRedirect(auth, googleProvider)
-    // redirect to home
-    navigate("/dashboard");
-  }
+    // You can use popup or redirect
+    await signInWithPopup(auth, googleProvider);
+  
+    // Get the signed-in user
+    const user = auth.currentUser;
+    // // ✅ Fetch a valid Firebase ID token
+    const idToken = await user.getIdToken();
+  
+    // // Call your backend to verify + create user in Postgres
+    const verifyToken = await verifyUser(idToken);
+    console.log("verifyToken : ", verifyToken)
+    if (verifyToken.id) {
+      localStorage.setItem('accessToken', idToken);
+      localStorage.setItem('refreshToken', user.refreshToken); // Firebase issues one
+      navigate("/dashboard");
+    }
+  };
+  
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -108,7 +123,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed"
           >
             Your personal AI tutor for fluent conversations. Practice speaking, 
             get instant feedback, and track your progress with advanced AI technology.
@@ -148,7 +163,7 @@ const HeroSection = () => {
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl font-bold text-primary">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-white">{stat.label}</div>
               </div>
             ))}
           </motion.div>

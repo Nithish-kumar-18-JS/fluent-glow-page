@@ -53,7 +53,7 @@ const CTASection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+              className="text-xl text-white mb-8 max-w-2xl mx-auto"
             >
               Join thousands of learners who've improved their English confidence 
               with our AI-powered tutor. Start your free trial today.
@@ -90,7 +90,7 @@ const CTASection = () => {
                 "✓ 30-day money-back guarantee", 
                 "✓ Cancel anytime"
               ].map((item, index) => (
-                <div key={index} className="text-sm text-muted-foreground">
+                <div key={index} className="text-sm text-white">
                   {item}
                 </div>
               ))}

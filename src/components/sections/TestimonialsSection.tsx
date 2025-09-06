@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
               Students Say
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Real success stories from learners who transformed their English speaking skills
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ const TestimonialsSection = () => {
                     <div className="font-semibold text-foreground text-sm">
                       {testimonial.name}
                     </div>
-                    <div className="text-muted-foreground text-xs">
+                    <div className="text-white text-xs">
                       {testimonial.role}
                     </div>
                   </div>
@@ -135,15 +135,15 @@ const TestimonialsSection = () => {
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">4.9/5</div>
-              <div className="text-sm text-muted-foreground">Average Rating</div>
+              <div className="text-sm text-white">Average Rating</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">50K+</div>
-              <div className="text-sm text-muted-foreground">Happy Learners</div>
+              <div className="text-sm text-white">Happy Learners</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">1M+</div>
-              <div className="text-sm text-muted-foreground">Conversations</div>
+              <div className="text-sm text-white">Conversations</div>
             </div>
           </div>
         </motion.div>

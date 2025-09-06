@@ -20,9 +20,9 @@ const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
         return () => unsub();
     }, [navigate]);
 
-    if (!user) {
-        return null; // or a loading spinner
-    }
+    // if (!user) {
+    //     return null; // or a loading spinner
+    // }
 
     return <>{children}</>;
 }

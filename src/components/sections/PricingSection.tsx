@@ -75,7 +75,7 @@ const PricingSection = () => {
               Learning Plan
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Start free and upgrade when you're ready. No hidden fees, cancel anytime.
           </p>
         </motion.div>
@@ -116,11 +116,11 @@ const PricingSection = () => {
                       <span className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         {plan.price}
                       </span>
-                      <span className="text-muted-foreground text-sm">
+                      <span className="text-white text-sm">
                         {plan.period}
                       </span>
                     </div>
-                    <p className="text-muted-foreground mt-2">
+                    <p className="text-white mt-2">
                       {plan.description}
                     </p>
                   </div>
@@ -151,7 +151,7 @@ const PricingSection = () => {
                   
                   {/* Money-back guarantee */}
                   {plan.name !== "Free" && (
-                    <p className="text-center text-xs text-muted-foreground mt-4">
+                    <p className="text-center text-xs text-white mt-4">
                       30-day money-back guarantee
                     </p>
                   )}
@@ -169,7 +169,7 @@ const PricingSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <p className="text-muted-foreground">
+          <p className="text-white">
             Have questions about our pricing?{" "}
             <a href="#" className="text-primary hover:text-primary-glow transition-colors">
               Check our FAQ

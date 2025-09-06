@@ -32,7 +32,7 @@ export default function Practice() {
         <GlassCard className="h-full flex flex-col">
           <div className="p-4 border-b border-glass-border/50">
             <h2 className="text-xl font-semibold text-foreground">AI Conversation Practice</h2>
-            <p className="text-sm text-muted-foreground">Practice speaking naturally with your AI tutor</p>
+            <p className="text-sm text-white">Practice speaking naturally with your AI tutor</p>
           </div>
 
           {/* Chat Messages */}
@@ -53,7 +53,7 @@ export default function Practice() {
                   }`}
                 >
                   <p className="text-foreground">{conv.message}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{conv.time}</p>
+                  <p className="text-xs text-white mt-1">{conv.time}</p>
                 </div>
               </motion.div>
             ))}
@@ -111,7 +111,7 @@ export default function Practice() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-foreground">{item.word}</p>
-                    <p className="text-xs text-muted-foreground">{item.issue}</p>
+                    <p className="text-xs text-white">{item.issue}</p>
                   </div>
                 </div>
               </motion.div>
@@ -124,7 +124,7 @@ export default function Practice() {
           <div className="space-y-4">
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-muted-foreground">Speaking Time</span>
+                <span className="text-white">Speaking Time</span>
                 <span className="text-foreground">8:42 / 15:00</span>
               </div>
               <div className="w-full bg-glass/20 rounded-full h-2">
@@ -133,7 +133,7 @@ export default function Practice() {
             </div>
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-muted-foreground">Fluency Score</span>
+                <span className="text-white">Fluency Score</span>
                 <span className="text-foreground">87%</span>
               </div>
               <div className="w-full bg-glass/20 rounded-full h-2">

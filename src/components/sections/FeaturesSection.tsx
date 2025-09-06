@@ -46,7 +46,7 @@ const FeaturesSection = () => {
               Features
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Everything you need to master English speaking, powered by cutting-edge AI technology
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ const FeaturesSection = () => {
                   <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white leading-relaxed">
                     {feature.description}
                   </p>
                   

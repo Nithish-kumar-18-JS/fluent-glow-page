@@ -27,10 +27,10 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-foreground mb-4">
             Ready to practice, Sarah?
           </h1>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+          <p className="text-white mb-6 max-w-md mx-auto">
             Continue your English learning journey with personalized AI conversations
           </p>
-          <GlassButton variant="primary" size="lg" className="group">
+          <GlassButton variant="default" size="lg" className="group">
             <Play className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
             Start Conversation
           </GlassButton>
@@ -53,7 +53,7 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  <p className="text-sm text-white">{stat.label}</p>
                 </div>
               </div>
               <div className="text-xs text-primary bg-primary/10 px-2 py-1 rounded-full">
@@ -76,7 +76,7 @@ export default function Home() {
             <div key={index} className="flex items-center justify-between p-3 glass-panel rounded-lg">
               <div>
                 <p className="text-foreground font-medium">{item.activity}</p>
-                <p className="text-sm text-muted-foreground">{item.time}</p>
+                <p className="text-sm text-white">{item.time}</p>
               </div>
               <div className="text-primary font-semibold">{item.score}</div>
             </div>

@@ -114,6 +114,10 @@
   }
 }
 
+.text-primary{
+  color: white !important
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -133,6 +137,12 @@
     backdrop-filter: blur(20px);
     border: 1px solid hsla(220, 25%, 25%, 0.3);
     box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card-outline {
+    @apply rounded-2xl;
+    @apply border border-glass-border bg-gradient-glass text-foreground;
+    border: 1px solid hsla(220, 25%, 25%, 0.3);
   }
 
   .glass-card {

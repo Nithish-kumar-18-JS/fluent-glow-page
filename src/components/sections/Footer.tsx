@@ -49,7 +49,7 @@ const Footer = () => {
                 English Tutor AI
               </span>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-sm">
+            <p className="text-white mb-6 max-w-sm">
               Transform your English speaking skills with AI-powered conversations, 
               real-time feedback, and personalized learning paths.
             </p>
@@ -66,7 +66,7 @@ const Footer = () => {
                   href={social.href}
                   className="w-10 h-10 glass-panel rounded-lg flex items-center justify-center hover:shadow-glow transition-all duration-300 group"
                 >
-                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <social.icon className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
                 </a>
               ))}
             </div>
@@ -87,7 +87,7 @@ const Footer = () => {
                   <li key={linkIndex}>
                     <a
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                      className="text-white hover:text-primary transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -106,16 +106,16 @@ const Footer = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col md:flex-row justify-between items-center pt-8 mt-8 border-t border-glass-border/30"
         >
-          <p className="text-muted-foreground text-sm">
+          <p className="text-white text-sm">
             © 2024 English Tutor AI. All rights reserved.
           </p>
           
           {/* Language Selector */}
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <div className="glass-panel px-3 py-1 rounded-lg">
-              <span className="text-sm text-muted-foreground">🌐 English</span>
+              <span className="text-sm text-white">🌐 English</span>
             </div>
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-white">
               Made with ❤️ - Nithish kumar
             </div>
           </div>

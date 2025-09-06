@@ -37,7 +37,7 @@ export default function Settings() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-foreground">Settings & Subscription</h1>
-        <p className="text-muted-foreground">Manage your account and upgrade your plan</p>
+        <p className="text-white">Manage your account and upgrade your plan</p>
       </div>
 
       {/* Current Plan */}
@@ -45,7 +45,7 @@ export default function Settings() {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold text-foreground">Current Plan: Free</h3>
-            <p className="text-muted-foreground">5/5 daily conversations used</p>
+            <p className="text-white">5/5 daily conversations used</p>
           </div>
           <div className="text-right">
             <GlassButton variant="primary">
@@ -96,7 +96,7 @@ export default function Settings() {
                   <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-3xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground">/{plan.period}</span>
+                    <span className="text-white">/{plan.period}</span>
                   </div>
                 </div>
 
@@ -129,7 +129,7 @@ export default function Settings() {
           <div className="flex items-center justify-between">
             <div>
               <h4 className="text-foreground font-medium">Email Notifications</h4>
-              <p className="text-sm text-muted-foreground">Receive updates about your progress</p>
+              <p className="text-sm text-white">Receive updates about your progress</p>
             </div>
             <Switch defaultChecked />
           </div>
@@ -137,7 +137,7 @@ export default function Settings() {
           <div className="flex items-center justify-between">
             <div>
               <h4 className="text-foreground font-medium">Daily Reminders</h4>
-              <p className="text-sm text-muted-foreground">Get reminded to practice daily</p>
+              <p className="text-sm text-white">Get reminded to practice daily</p>
             </div>
             <Switch defaultChecked />
           </div>
@@ -145,7 +145,7 @@ export default function Settings() {
           <div className="flex items-center justify-between">
             <div>
               <h4 className="text-foreground font-medium">Sound Effects</h4>
-              <p className="text-sm text-muted-foreground">Play sounds for interactions</p>
+              <p className="text-sm text-white">Play sounds for interactions</p>
             </div>
             <Switch />
           </div>

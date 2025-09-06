@@ -7,14 +7,32 @@ import Practice from "@/components/dashboard/pages/Practice";
 import Vocabulary from "@/components/dashboard/pages/Vocabulary";
 import Progress from "@/components/dashboard/pages/Progress";
 import Settings from "@/components/dashboard/pages/Settings";
-
-const Dashboard = ({ user }: { user: any }) => {
+import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import OnBoarding from "@/components/OnBoarding";
+import heroImage from "@/assets/hero-bg-2.jpg";
+const Dashboard = () => {
+  const [isOnBoardingCompleted,setIsOnBoardingCompleted] = useState(false);
+  const [modalOpen,setModalOpen] = useState(false)
+  if(!isOnBoardingCompleted){
+    useEffect(() => {
+      setModalOpen(true)
+    },[])
+    return<div className="min-h-screen " style={{ backgroundImage: `url(${heroImage})`,backgroundSize: "cover",backgroundPosition: "center" ,}}>
+      <OnBoarding setIsOnBoardingCompleted={setIsOnBoardingCompleted}/>
+      <Footer/>
+      </div>
+  }
+  useEffect(() => {
+    console.log("isOnBoardingCompleted",isOnBoardingCompleted)
+  },[isOnBoardingCompleted])
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full">
+      <div className="min-h-screen flex w-full" style={{ backgroundImage: `url(${heroImage})` ,backgroundSize: "cover",backgroundPosition: "center" }} >
         <DashboardSidebar />
-        <div className="flex-1 flex flex-col">
-          <DashboardHeader user={user} />
+        <div className="flex-1 flex flex-col" >
+          <DashboardHeader />
           <main className="flex-1 p-6">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -24,6 +42,7 @@ const Dashboard = ({ user }: { user: any }) => {
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </main>
+          <Footer/>
         </div>
       </div>
     </SidebarProvider>

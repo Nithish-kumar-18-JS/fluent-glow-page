@@ -37,7 +37,7 @@ const HowItWorksSection = () => {
               Works
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Three simple steps to transform your English speaking skills
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ const HowItWorksSection = () => {
                 <h3 className="text-2xl font-semibold mb-4 text-foreground">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-white leading-relaxed">
                   {step.description}
                 </p>
                 

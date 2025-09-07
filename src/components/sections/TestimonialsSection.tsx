@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
               <GlassCard className="group relative h-full p-6">
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <Quote className="w-8 h-8 text-primary-landing" />
+                  <Quote className="w-8 h-8 text-white" />
                 </div>
                 
                 {/* Rating Stars */}
@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
                 </div>
                 
                 {/* Quote */}
-                <blockquote className="text-foreground-landing/90 mb-6 leading-relaxed">
+                <blockquote className="text-white mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
                 

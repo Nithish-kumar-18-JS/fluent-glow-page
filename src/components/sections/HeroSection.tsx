@@ -98,10 +98,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full text-sm font-medium text-foreground-landing/80"
+            // className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full text-sm font-medium text-foreground-landing/80"
           >
-            <Sparkles className="w-4 h-4 text-primary-landing" />
+            <GlassButton variant="primary" size="lg" className="text-black">
+            <Sparkles className="w-4 h-4 text-black mr-2" />
             AI-Powered English Learning
+            </GlassButton>
           </motion.div>
 
           {/* Main Headline */}

@@ -41,7 +41,7 @@ export default function Progress() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-foreground">Your Progress</h1>
-        <p className="text-white">Track your English learning journey</p>
+        <p className="text-primary">Track your English learning journey</p>
       </div>
 
       {/* Key Metrics */}
@@ -62,9 +62,9 @@ export default function Progress() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-2xl font-bold text-foreground">{metric.value}</p>
-                  <p className="text-sm text-white">{metric.label}</p>
+                  <p className="text-sm text-primary">{metric.label}</p>
                 </div>
-                <div className="p-2 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-lg">
+                <div className="p-2 bg-gradient-to-br from-primary/20 to-white/30 rounded-lg">
                   <metric.icon className="h-5 w-5 text-primary" />
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default function Progress() {
                 <span className="text-2xl font-bold text-foreground">78%</span>
               </div>
             </div>
-            <p className="text-sm text-white">Upper Intermediate (B2)</p>
+            <p className="text-sm text-primary">Upper Intermediate (B2)</p>
             <div className="mt-4 p-3 glass-panel rounded-lg">
               <p className="text-xs text-primary">+5% improvement this month</p>
             </div>
@@ -181,12 +181,12 @@ export default function Progress() {
                     transition={{ delay: 0.6 + index * 0.1 }}
                     className="flex items-center gap-4 p-3 glass-panel rounded-lg"
                   >
-                    <div className={`p-2 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-lg ${achievement.color}`}>
+                    <div className={`p-2 bg-gradient-to-br from-primary/20 to-white/30 rounded-lg ${achievement.color}`}>
                       <achievement.icon className="h-5 w-5" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">{achievement.title}</p>
-                      <p className="text-sm text-white">{achievement.description}</p>
+                      <p className="text-sm text-primary">{achievement.description}</p>
                     </div>
                   </motion.div>
                 ))}

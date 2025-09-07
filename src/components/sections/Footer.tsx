@@ -43,13 +43,13 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-glow rounded-lg flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-primary-foreground" />
+                <MessageCircle className="w-5 h-5 text-primary-landing-foreground" />
               </div>
-              <span className="text-xl font-bold text-foreground">
+              <span className="text-xl font-bold text-foreground-landing">
                 English Tutor AI
               </span>
             </div>
-            <p className="text-white mb-6 max-w-sm">
+            <p className="text-primary-landing mb-6 max-w-sm">
               Transform your English speaking skills with AI-powered conversations, 
               real-time feedback, and personalized learning paths.
             </p>
@@ -66,7 +66,7 @@ const Footer = () => {
                   href={social.href}
                   className="w-10 h-10 glass-panel rounded-lg flex items-center justify-center hover:shadow-glow transition-all duration-300 group"
                 >
-                  <social.icon className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
+                  <social.icon className="w-5 h-5 text-primary-landing group-hover:text-primary-landing transition-colors" />
                 </a>
               ))}
             </div>
@@ -81,13 +81,13 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <h3 className="font-semibold text-foreground mb-4">{category}</h3>
+              <h3 className="font-semibold text-foreground-landing mb-4">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
                       href={link.href}
-                      className="text-white hover:text-primary transition-colors duration-200"
+                      className="text-primary-landing hover:text-primary-landing transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -106,16 +106,16 @@ const Footer = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col md:flex-row justify-between items-center pt-8 mt-8 border-t border-glass-border/30"
         >
-          <p className="text-white text-sm">
+          <p className="text-primary-landing text-sm">
             © 2024 English Tutor AI. All rights reserved.
           </p>
           
           {/* Language Selector */}
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <div className="glass-panel px-3 py-1 rounded-lg">
-              <span className="text-sm text-white">🌐 English</span>
+              <span className="text-sm text-primary-landing">🌐 English</span>
             </div>
-            <div className="text-sm text-white">
+            <div className="text-sm text-primary-landing">
               Made with ❤️ - Nithish kumar
             </div>
           </div>

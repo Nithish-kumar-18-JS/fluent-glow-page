@@ -70,12 +70,12 @@ const PricingSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Choose Your</span>{" "}
+            <span className="text-foreground-landing">Choose Your</span>{" "}
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               Learning Plan
             </span>
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="text-xl text-primary-landing max-w-3xl mx-auto">
             Start free and upgrade when you're ready. No hidden fees, cancel anytime.
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ const PricingSection = () => {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-glow text-primary-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-glow">
+                  <div className="bg-gradient-glow text-primary-landing-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-glow">
                     <Star className="w-4 h-4" />
                     Most Popular
                   </div>
@@ -109,18 +109,18 @@ const PricingSection = () => {
                 <div className="relative z-10 p-8">
                   {/* Plan Header */}
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                    <h3 className="text-2xl font-bold text-foreground-landing mb-2">
                       {plan.name}
                     </h3>
                     <div className="flex items-baseline justify-center gap-1">
                       <span className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         {plan.price}
                       </span>
-                      <span className="text-white text-sm">
+                      <span className="text-primary-landing text-sm">
                         {plan.period}
                       </span>
                     </div>
-                    <p className="text-white mt-2">
+                    <p className="text-primary-landing mt-2">
                       {plan.description}
                     </p>
                   </div>
@@ -130,9 +130,9 @@ const PricingSection = () => {
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
                         <div className="w-5 h-5 bg-gradient-feature rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Check className="w-3 h-3 text-primary" />
+                          <Check className="w-3 h-3 text-primary-landing" />
                         </div>
-                        <span className="text-foreground/90 text-sm">
+                        <span className="text-foreground-landing/90 text-sm">
                           {feature}
                         </span>
                       </div>
@@ -151,7 +151,7 @@ const PricingSection = () => {
                   
                   {/* Money-back guarantee */}
                   {plan.name !== "Free" && (
-                    <p className="text-center text-xs text-white mt-4">
+                    <p className="text-center text-xs text-primary-landing mt-4">
                       30-day money-back guarantee
                     </p>
                   )}
@@ -169,13 +169,13 @@ const PricingSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <p className="text-white">
+          <p className="text-primary-landing">
             Have questions about our pricing?{" "}
-            <a href="#" className="text-primary hover:text-primary-glow transition-colors">
+            <a href="#" className="text-primary-landing hover:text-primary-landing-glow transition-colors">
               Check our FAQ
             </a>{" "}
             or{" "}
-            <a href="#" className="text-primary hover:text-primary-glow transition-colors">
+            <a href="#" className="text-primary-landing hover:text-primary-landing-glow transition-colors">
               contact support
             </a>
           </p>

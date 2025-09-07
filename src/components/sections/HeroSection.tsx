@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Sparkles, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-bg-2.jpg";
+import heroImage from "@/assets/hero-bg-3.png";
 import { auth, googleProvider } from "../../../firebase.js";
 import { signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -55,8 +55,8 @@ const HeroSection = () => {
     if (verifyToken.id) {
       localStorage.setItem('accessToken', idToken);
       localStorage.setItem('refreshToken', user.refreshToken); // Firebase issues one
-      navigate("/dashboard");
     }
+    navigate("/dashboard");
   };
   
 
@@ -98,9 +98,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full text-sm font-medium text-foreground/80"
+            className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full text-sm font-medium text-foreground-landing/80"
           >
-            <Sparkles className="w-4 h-4 text-primary" />
+            <Sparkles className="w-4 h-4 text-primary-landing" />
             AI-Powered English Learning
           </motion.div>
 
@@ -111,7 +111,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
           >
-            <span className="text-foreground">Speak English with</span>
+            <span className="text-foreground-landing">Speak English with</span>
             <br />
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               Confidence
@@ -123,7 +123,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-primary-landing max-w-2xl mx-auto leading-relaxed"
           >
             Your personal AI tutor for fluent conversations. Practice speaking, 
             get instant feedback, and track your progress with advanced AI technology.
@@ -136,13 +136,13 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <GlassButton variant="outline" size="xl" className="group" onClick={handleLoginWithGoogle}>
+            <GlassButton variant="outline" size="xl" className="group text-white" onClick={handleLoginWithGoogle}>
               <img src="google.svg" alt="google" className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Sign in with google
             </GlassButton>
             
             <Link to="/dashboard">
-              <GlassButton variant="hero" size="xl" className="group">
+              <GlassButton variant="hero" size="xl" className="group text-white">
                 View Dashboard
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </GlassButton>
@@ -162,8 +162,8 @@ const HeroSection = () => {
               { number: "50+", label: "Languages Supported" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl font-bold text-primary">{stat.number}</div>
-                <div className="text-sm text-white">{stat.label}</div>
+                <div className="text-2xl font-bold text-primary-landing">{stat.number}</div>
+                <div className="text-sm text-primary-landing">{stat.label}</div>
               </div>
             ))}
           </motion.div>

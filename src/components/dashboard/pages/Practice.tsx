@@ -32,7 +32,7 @@ export default function Practice() {
         <GlassCard className="h-full flex flex-col">
           <div className="p-4 border-b border-glass-border/50">
             <h2 className="text-xl font-semibold text-foreground">AI Conversation Practice</h2>
-            <p className="text-sm text-white">Practice speaking naturally with your AI tutor</p>
+            <p className="text-sm text-primary">Practice speaking naturally with your AI tutor</p>
           </div>
 
           {/* Chat Messages */}
@@ -48,12 +48,12 @@ export default function Practice() {
                 <div
                   className={`max-w-xs lg:max-w-md px-4 py-2 rounded-2xl glass-panel ${
                     conv.sender === "user"
-                      ? "bg-gradient-to-r from-primary/20 to-purple-500/20 border-primary/30"
+                      ? "bg-gradient-to-r from-primary/20 to-white/30 border-primary/30"
                       : "bg-gradient-to-r from-glass/20 to-glass/10"
                   }`}
                 >
                   <p className="text-foreground">{conv.message}</p>
-                  <p className="text-xs text-white mt-1">{conv.time}</p>
+                  <p className="text-xs text-primary mt-1">{conv.time}</p>
                 </div>
               </motion.div>
             ))}
@@ -66,7 +66,7 @@ export default function Practice() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Type your message or use voice..."
-                className="glass-panel border-glass-border text-foreground"
+                className="text-white placeholder:text-white focus:outline-none"
               />
               <GlassButton
                 variant={isRecording ? "primary" : "outline"}
@@ -111,7 +111,7 @@ export default function Practice() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-medium text-foreground">{item.word}</p>
-                    <p className="text-xs text-white">{item.issue}</p>
+                    <p className="text-xs text-primary">{item.issue}</p>
                   </div>
                 </div>
               </motion.div>
@@ -124,7 +124,7 @@ export default function Practice() {
           <div className="space-y-4">
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-white">Speaking Time</span>
+                <span className="text-primary">Speaking Time</span>
                 <span className="text-foreground">8:42 / 15:00</span>
               </div>
               <div className="w-full bg-glass/20 rounded-full h-2">
@@ -133,7 +133,7 @@ export default function Practice() {
             </div>
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-white">Fluency Score</span>
+                <span className="text-primary">Fluency Score</span>
                 <span className="text-foreground">87%</span>
               </div>
               <div className="w-full bg-glass/20 rounded-full h-2">

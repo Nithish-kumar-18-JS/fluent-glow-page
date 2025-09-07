@@ -32,12 +32,12 @@ const HowItWorksSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">How It</span>{" "}
+            <span className="text-foreground-landing">How It</span>{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="text-xl text-primary-landing max-w-3xl mx-auto">
             Three simple steps to transform your English speaking skills
           </p>
         </motion.div>
@@ -53,22 +53,22 @@ const HowItWorksSection = () => {
             >
               <GlassCard className="text-center group relative overflow-hidden">
                 {/* Step Number */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-glow rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg shadow-glow">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-glow rounded-full flex items-center justify-center text-primary-landing-foreground font-bold text-lg shadow-glow">
                   {index + 1}
                 </div>
                 
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
                   <div className="w-16 h-16 bg-gradient-feature rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <step.icon className="w-8 h-8 text-primary" />
+                    <step.icon className="w-8 h-8 text-primary-landing" />
                   </div>
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-2xl font-semibold mb-4 text-foreground">
+                <h3 className="text-2xl font-semibold mb-4 text-foreground-landing">
                   {step.title}
                 </h3>
-                <p className="text-white leading-relaxed">
+                <p className="text-primary-landing leading-relaxed">
                   {step.description}
                 </p>
                 

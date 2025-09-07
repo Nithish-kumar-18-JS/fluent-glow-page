@@ -114,9 +114,28 @@
   }
 }
 
+.border-primary {
+  color: transparent !important;
+}
+
+.text-primary-landing {
+  color: white !important;
+}
+
 .text-primary{
+  color: rgb(0, 0, 0) !important
+}
+
+.text-foreground-landing {
   color: white !important
 }
+
+
+.text-foreground {
+  color: rgb(0, 0, 0) !important
+}
+
+
 
 @layer base {
   * {

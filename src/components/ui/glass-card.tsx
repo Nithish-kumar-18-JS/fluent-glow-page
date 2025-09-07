@@ -49,7 +49,7 @@ const GlassCardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-white", className)}
+    className={cn("text-sm text-primary", className)}
     {...props}
   />
 ))

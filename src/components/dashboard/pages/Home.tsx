@@ -18,7 +18,7 @@ export default function Home() {
       className="space-y-8"
     >
       {/* Welcome Panel */}
-      <GlassCard className="p-8 text-center bg-gradient-to-br from-primary/20 to-purple-500/20 border-2 border-primary/30">
+      <GlassCard className="p-8 text-center ">
         <motion.div
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
@@ -27,10 +27,10 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-foreground mb-4">
             Ready to practice, Sarah?
           </h1>
-          <p className="text-white mb-6 max-w-md mx-auto">
+          <p className="text-primary mb-6 max-w-md mx-auto">
             Continue your English learning journey with personalized AI conversations
           </p>
-          <GlassButton variant="default" size="lg" className="group">
+          <GlassButton variant="default" size="lg" className="group text-foreground">
             <Play className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
             Start Conversation
           </GlassButton>
@@ -48,15 +48,15 @@ export default function Home() {
           >
             <GlassCard className="p-6 hover:-translate-y-1 transition-all duration-300">
               <div className="flex items-center justify-between mb-4">
-                <div className="p-3 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-xl">
+                <div className="p-3 bg-gradient-to-br from-primary/20 to-white/30 rounded-xl">
                   <stat.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-right">
                   <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-sm text-white">{stat.label}</p>
+                  <p className="text-sm text-primary">{stat.label}</p>
                 </div>
               </div>
-              <div className="text-xs text-primary bg-primary/10 px-2 py-1 rounded-full">
+              <div className="text-xs text-primary px-2 py-1 rounded-full">
                 {stat.change}
               </div>
             </GlassCard>
@@ -76,7 +76,7 @@ export default function Home() {
             <div key={index} className="flex items-center justify-between p-3 glass-panel rounded-lg">
               <div>
                 <p className="text-foreground font-medium">{item.activity}</p>
-                <p className="text-sm text-white">{item.time}</p>
+                <p className="text-sm text-primary">{item.time}</p>
               </div>
               <div className="text-primary font-semibold">{item.score}</div>
             </div>

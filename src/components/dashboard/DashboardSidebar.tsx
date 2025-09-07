@@ -35,7 +35,7 @@ export function DashboardSidebar() {
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
       ? "glass-panel text-primary shadow-glow" 
-      : "text-white hover:text-foreground hover:bg-glass/10";
+      : "text-primary hover:text-foreground hover:bg-glass/10";
 
   return (
     <Sidebar
@@ -46,12 +46,12 @@ export function DashboardSidebar() {
         <div className="p-4 border-b border-glass-border/50">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/60 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">ET</span>
+              <span className="text-primary font-bold text-sm">ET</span>
             </div>
             {!collapsed && (
               <div>
                 <h2 className="text-lg font-semibold text-foreground">English Tutor AI</h2>
-                <p className="text-xs text-white">Your AI Learning Companion</p>
+                <p className="text-xs text-primary">Your AI Learning Companion</p>
               </div>
             )}
           </div>
@@ -87,7 +87,7 @@ export function DashboardSidebar() {
               auth.signOut();
               navigate("/");  
             }}
-            className="w-full justify-start text-white hover:text-foreground"
+            className="w-full justify-start text-primary hover:text-foreground"
           >
             <LogOut className="h-4 w-4" />
             {!collapsed && <span className="ml-2">Logout</span>}

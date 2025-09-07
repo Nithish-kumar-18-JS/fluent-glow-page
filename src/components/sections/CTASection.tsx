@@ -28,7 +28,7 @@ const CTASection = () => {
               className="flex justify-center mb-8"
             >
               <div className="w-16 h-16 bg-gradient-glow rounded-2xl flex items-center justify-center shadow-glow">
-                <Rocket className="w-8 h-8 text-primary-foreground" />
+                <Rocket className="w-8 h-8 text-primary-landing-foreground" />
               </div>
             </motion.div>
             
@@ -40,7 +40,7 @@ const CTASection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-3xl md:text-5xl font-bold mb-6"
             >
-              <span className="text-foreground">Ready to Transform Your</span>
+              <span className="text-foreground-landing">Ready to Transform Your</span>
               <br />
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                 English Speaking?
@@ -53,7 +53,7 @@ const CTASection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-white mb-8 max-w-2xl mx-auto"
+              className="text-xl text-primary-landing mb-8 max-w-2xl mx-auto"
             >
               Join thousands of learners who've improved their English confidence 
               with our AI-powered tutor. Start your free trial today.
@@ -90,7 +90,7 @@ const CTASection = () => {
                 "✓ 30-day money-back guarantee", 
                 "✓ Cancel anytime"
               ].map((item, index) => (
-                <div key={index} className="text-sm text-white">
+                <div key={index} className="text-sm text-primary-landing">
                   {item}
                 </div>
               ))}

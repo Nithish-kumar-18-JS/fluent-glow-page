@@ -28,13 +28,13 @@ function PrivacyPolicy() {
   ];
 
   return (
-    <div className="min-h-screen  text-white">
+    <div className="min-h-screen  text-primary">
       {/* Header */}
       <div className=" border-b border-slate-700">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <Shield className="w-8 h-8 text-white-400 mr-3" />
+              <Shield className="w-8 h-8 text-primary-400 mr-3" />
               <h1 className="text-4xl font-bold">Privacy Policy</h1>
             </div>
             <p className="text-xl text-slate-300 mb-4">AI English Tutoring Platform</p>
@@ -50,7 +50,7 @@ function PrivacyPolicy() {
           <div className="lg:col-span-1">
             <div className="sticky top-8">
               <div className=" rounded-xl p-6 border border-slate-700">
-                <h2 className="text-lg font-semibold mb-6 text-white-400">Table of Contents</h2>
+                <h2 className="text-lg font-semibold mb-6 text-primary-400">Table of Contents</h2>
                 <nav className="space-y-2">
                   {tableOfContents.map((item) => {
                     const IconComponent = item.icon;
@@ -60,8 +60,8 @@ function PrivacyPolicy() {
                         href={`#${item.id}`}
                         className="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors group"
                       >
-                        <IconComponent className="w-4 h-4 text-white-400 mr-3 group-hover:text-blue-300" />
-                        <span className="text-sm text-slate-300 group-hover:text-white">
+                        <IconComponent className="w-4 h-4 text-primary-400 mr-3 group-hover:text-blue-300" />
+                        <span className="text-sm text-slate-300 group-hover:text-primary">
                           {item.title}
                         </span>
                       </a>
@@ -80,8 +80,8 @@ function PrivacyPolicy() {
               <section id="overview" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Eye className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">1. Overview</h2>
+                    <Eye className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">1. Overview</h2>
                   </div>
                   <div className="space-y-4 text-slate-300 leading-relaxed">
                     <p>
@@ -103,13 +103,13 @@ function PrivacyPolicy() {
               <section id="information-collected" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <FileText className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">2. Information We Collect</h2>
+                    <FileText className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">2. Information We Collect</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">2.1 Account Information</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">2.1 Account Information</h3>
                       <ul className="list-disc list-inside space-y-2 ml-4">
                         <li>Name and email address</li>
                         <li>Profile picture (optional)</li>
@@ -120,7 +120,7 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">2.2 Learning Activity Data</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">2.2 Learning Activity Data</h3>
                       <ul className="list-disc list-inside space-y-2 ml-4">
                         <li>Voice recordings of your pronunciation practice sessions</li>
                         <li>Text-based conversations with our AI tutor</li>
@@ -132,7 +132,7 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">2.3 Technical Information</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">2.3 Technical Information</h3>
                       <ul className="list-disc list-inside space-y-2 ml-4">
                         <li>Device type, browser information, and operating system</li>
                         <li>IP address and general location information</li>
@@ -143,7 +143,7 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">2.4 Payment Information</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">2.4 Payment Information</h3>
                       <p>
                         Payment processing is handled by secure third-party providers. We do not store complete credit card numbers or sensitive payment information on our servers. We only retain transaction records necessary for account management and customer support.
                       </p>
@@ -156,13 +156,13 @@ function PrivacyPolicy() {
               <section id="how-we-use" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Users className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">3. How We Use Your Information</h2>
+                    <Users className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">3. How We Use Your Information</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Educational Services</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Educational Services</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Provide personalized AI tutoring sessions</li>
                           <li>Generate customized learning content</li>
@@ -171,7 +171,7 @@ function PrivacyPolicy() {
                         </ul>
                       </div>
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Platform Improvement</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Platform Improvement</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Enhance AI tutor accuracy and effectiveness</li>
                           <li>Develop new features and learning methods</li>
@@ -180,7 +180,7 @@ function PrivacyPolicy() {
                         </ul>
                       </div>
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Communication</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Communication</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Send progress reports and achievements</li>
                           <li>Provide customer support assistance</li>
@@ -189,7 +189,7 @@ function PrivacyPolicy() {
                         </ul>
                       </div>
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Legal Compliance</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Legal Compliance</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Comply with applicable privacy laws</li>
                           <li>Respond to legal requests and investigations</li>
@@ -206,8 +206,8 @@ function PrivacyPolicy() {
               <section id="ai-processing" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Shield className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">4. AI Processing and Learning</h2>
+                    <Shield className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">4. AI Processing and Learning</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-700 rounded-lg p-6">
@@ -224,7 +224,7 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">Data Protection in AI Processing</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">Data Protection in AI Processing</h3>
                       <ul className="list-disc list-inside space-y-2">
                         <li>All AI processing occurs on secure, encrypted servers</li>
                         <li>Personal identifiers are separated from learning data during processing</li>
@@ -247,8 +247,8 @@ function PrivacyPolicy() {
               <section id="data-sharing" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Globe className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">5. Data Sharing and Third Parties</h2>
+                    <Globe className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">5. Data Sharing and Third Parties</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <div className="bg-green-900/30 border border-green-700 rounded-lg p-6">
@@ -259,31 +259,31 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-white-400">When We May Share Information:</h3>
+                      <h3 className="text-lg font-semibold text-primary-400">When We May Share Information:</h3>
                       
                       <div className=" rounded-lg p-4">
-                        <h4 className="font-semibold text-white mb-2">Service Providers</h4>
+                        <h4 className="font-semibold text-primary mb-2">Service Providers</h4>
                         <p className="text-sm">Cloud hosting, payment processing, customer support tools - all bound by strict confidentiality agreements</p>
                       </div>
                       
                       <div className=" rounded-lg p-4">
-                        <h4 className="font-semibold text-white mb-2">Legal Requirements</h4>
+                        <h4 className="font-semibold text-primary mb-2">Legal Requirements</h4>
                         <p className="text-sm">When required by law, court order, or to protect safety and security</p>
                       </div>
                       
                       <div className=" rounded-lg p-4">
-                        <h4 className="font-semibold text-white mb-2">Business Transfers</h4>
+                        <h4 className="font-semibold text-primary mb-2">Business Transfers</h4>
                         <p className="text-sm">In case of merger or acquisition, with user notification and continued privacy protection</p>
                       </div>
                       
                       <div className=" rounded-lg p-4">
-                        <h4 className="font-semibold text-white mb-2">With Your Consent</h4>
+                        <h4 className="font-semibold text-primary mb-2">With Your Consent</h4>
                         <p className="text-sm">Only when you explicitly authorize sharing for specific purposes</p>
                       </div>
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">Third-Party Integration Partners</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">Third-Party Integration Partners</h3>
                       <ul className="list-disc list-inside space-y-2 text-sm">
                         <li><strong>Payment Processors:</strong> Stripe, PayPal (payment information only)</li>
                         <li><strong>Analytics:</strong> Google Analytics (anonymized usage data)</li>
@@ -299,8 +299,8 @@ function PrivacyPolicy() {
               <section id="data-security" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Lock className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">6. Data Security and Protection</h2>
+                    <Lock className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">6. Data Security and Protection</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <p className="text-lg">
@@ -309,7 +309,7 @@ function PrivacyPolicy() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Technical Safeguards</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Technical Safeguards</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>256-bit SSL/TLS encryption for data transmission</li>
                           <li>AES-256 encryption for data at rest</li>
@@ -320,7 +320,7 @@ function PrivacyPolicy() {
                       </div>
                       
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Operational Security</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Operational Security</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Limited access controls based on job function</li>
                           <li>Regular employee security training</li>
@@ -345,8 +345,8 @@ function PrivacyPolicy() {
               <section id="data-retention" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Clock className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">7. Data Retention and Deletion</h2>
+                    <Clock className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">7. Data Retention and Deletion</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <p>
@@ -355,7 +355,7 @@ function PrivacyPolicy() {
 
                     <div className="space-y-4">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Retention Periods</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Retention Periods</h3>
                         <div className="space-y-3">
                           <div className="flex justify-between items-center border-b border-slate-600 pb-2">
                             <span className="font-medium">Raw Voice Recordings</span>
@@ -385,7 +385,7 @@ function PrivacyPolicy() {
                       </div>
 
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Data Deletion Process</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Data Deletion Process</h3>
                         <ul className="list-disc list-inside space-y-2">
                           <li>Automatic deletion based on retention schedules</li>
                           <li>Secure deletion using industry-standard methods</li>
@@ -403,8 +403,8 @@ function PrivacyPolicy() {
               <section id="minors" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Users className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">8. Special Considerations for Minors</h2>
+                    <Users className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">8. Special Considerations for Minors</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <div className="bg-orange-900/30 border border-orange-700 rounded-lg p-6">
@@ -416,7 +416,7 @@ function PrivacyPolicy() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Children Under 13</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Children Under 13</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Parental consent required before account creation</li>
                           <li>Limited data collection (education-focused only)</li>
@@ -427,7 +427,7 @@ function PrivacyPolicy() {
                       </div>
                       
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Ages 13-17</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Ages 13-17</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li>Can create accounts with simplified consent process</li>
                           <li>Parents can request access to account information</li>
@@ -439,7 +439,7 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">Parental Rights and Controls</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">Parental Rights and Controls</h3>
                       <ul className="list-disc list-inside space-y-2">
                         <li>Review all information collected from your child</li>
                         <li>Consent to collection and use of child's information</li>
@@ -461,8 +461,8 @@ function PrivacyPolicy() {
               <section id="user-rights" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Shield className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">9. Your Privacy Rights</h2>
+                    <Shield className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">9. Your Privacy Rights</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <p>
@@ -471,7 +471,7 @@ function PrivacyPolicy() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Access and Transparency</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Access and Transparency</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li><strong>Right to Know:</strong> What personal information we collect</li>
                           <li><strong>Right to Access:</strong> Request copies of your data</li>
@@ -481,7 +481,7 @@ function PrivacyPolicy() {
                       </div>
                       
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Control and Correction</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Control and Correction</h3>
                         <ul className="list-disc list-inside space-y-2 text-sm">
                           <li><strong>Right to Rectification:</strong> Correct inaccurate information</li>
                           <li><strong>Right to Deletion:</strong> Request removal of your data</li>
@@ -492,21 +492,21 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">How to Exercise Your Rights</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">How to Exercise Your Rights</h3>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="text-center p-4 bg-slate-600/50 rounded-lg">
-                          <Mail className="w-8 h-8 text-white-400 mx-auto mb-2" />
-                          <h4 className="font-semibold text-white mb-1">Email Request</h4>
+                          <Mail className="w-8 h-8 text-primary-400 mx-auto mb-2" />
+                          <h4 className="font-semibold text-primary mb-1">Email Request</h4>
                           <p className="text-xs text-slate-300">privacy@englishtutor.ai</p>
                         </div>
                         <div className="text-center p-4 bg-slate-600/50 rounded-lg">
-                          <Users className="w-8 h-8 text-white-400 mx-auto mb-2" />
-                          <h4 className="font-semibold text-white mb-1">Account Dashboard</h4>
+                          <Users className="w-8 h-8 text-primary-400 mx-auto mb-2" />
+                          <h4 className="font-semibold text-primary mb-1">Account Dashboard</h4>
                           <p className="text-xs text-slate-300">Self-service privacy tools</p>
                         </div>
                         <div className="text-center p-4 bg-slate-600/50 rounded-lg">
-                          <Phone className="w-8 h-8 text-white-400 mx-auto mb-2" />
-                          <h4 className="font-semibold text-white mb-1">Phone Support</h4>
+                          <Phone className="w-8 h-8 text-primary-400 mx-auto mb-2" />
+                          <h4 className="font-semibold text-primary mb-1">Phone Support</h4>
                           <p className="text-xs text-slate-300">1-800-PRIVACY</p>
                         </div>
                       </div>
@@ -529,8 +529,8 @@ function PrivacyPolicy() {
               <section id="cookies" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Eye className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">10. Cookies and Tracking Technologies</h2>
+                    <Eye className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">10. Cookies and Tracking Technologies</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <p>
@@ -539,7 +539,7 @@ function PrivacyPolicy() {
 
                     <div className="space-y-4">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Types of Cookies We Use</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Types of Cookies We Use</h3>
                         <div className="space-y-4">
                           <div className="border-l-4 border-green-500 pl-4">
                             <h4 className="font-semibold text-green-300">Essential Cookies (Required)</h4>
@@ -561,7 +561,7 @@ function PrivacyPolicy() {
                       </div>
 
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Managing Your Cookie Preferences</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Managing Your Cookie Preferences</h3>
                         <ul className="list-disc list-inside space-y-2">
                           <li>Use our Cookie Preference Center in your account settings</li>
                           <li>Configure browser settings to block or delete cookies</li>
@@ -583,8 +583,8 @@ function PrivacyPolicy() {
               <section id="updates" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <FileText className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">11. Policy Updates</h2>
+                    <FileText className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">11. Policy Updates</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <p>
@@ -592,10 +592,10 @@ function PrivacyPolicy() {
                     </p>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">How We Notify You of Changes</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">How We Notify You of Changes</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <h4 className="font-semibold text-white mb-2">Minor Changes</h4>
+                          <h4 className="font-semibold text-primary mb-2">Minor Changes</h4>
                           <ul className="list-disc list-inside space-y-1 text-sm">
                             <li>Posted on our website</li>
                             <li>Updated "Last Modified" date</li>
@@ -603,7 +603,7 @@ function PrivacyPolicy() {
                           </ul>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-white mb-2">Material Changes</h4>
+                          <h4 className="font-semibold text-primary mb-2">Material Changes</h4>
                           <ul className="list-disc list-inside space-y-1 text-sm">
                             <li>Email notification to all users</li>
                             <li>30-day advance notice</li>
@@ -627,8 +627,8 @@ function PrivacyPolicy() {
               <section id="contact" className="mb-12">
                 <div className=" rounded-xl p-8 border border-slate-700">
                   <div className="flex items-center mb-6">
-                    <Phone className="w-6 h-6 text-white-400 mr-3" />
-                    <h2 className="text-2xl font-bold text-white">12. Contact Information</h2>
+                    <Phone className="w-6 h-6 text-primary-400 mr-3" />
+                    <h2 className="text-2xl font-bold text-primary">12. Contact Information</h2>
                   </div>
                   <div className="space-y-6 text-slate-300">
                     <p>
@@ -637,14 +637,14 @@ function PrivacyPolicy() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Privacy Inquiries</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Privacy Inquiries</h3>
                         <div className="space-y-3">
                           <div className="flex items-center">
-                            <Mail className="w-4 h-4 text-white-400 mr-3" />
+                            <Mail className="w-4 h-4 text-primary-400 mr-3" />
                             <span>privacy@englishtutor.ai</span>
                           </div>
                           <div className="flex items-center">
-                            <Phone className="w-4 h-4 text-white-400 mr-3" />
+                            <Phone className="w-4 h-4 text-primary-400 mr-3" />
                             <span>1-800-PRIVACY (1-800-774-8229)</span>
                           </div>
                           <p className="text-sm text-slate-400 mt-3">
@@ -654,10 +654,10 @@ function PrivacyPolicy() {
                       </div>
 
                       <div className=" rounded-lg p-6">
-                        <h3 className="text-lg font-semibold text-white-400 mb-4">Data Protection Officer</h3>
+                        <h3 className="text-lg font-semibold text-primary-400 mb-4">Data Protection Officer</h3>
                         <div className="space-y-3">
                           <div className="flex items-center">
-                            <Mail className="w-4 h-4 text-white-400 mr-3" />
+                            <Mail className="w-4 h-4 text-primary-400 mr-3" />
                             <span>dpo@englishtutor.ai</span>
                           </div>
                           <p className="text-sm text-slate-400">
@@ -668,7 +668,7 @@ function PrivacyPolicy() {
                     </div>
 
                     <div className=" rounded-lg p-6">
-                      <h3 className="text-lg font-semibold text-white-400 mb-4">Company Information</h3>
+                      <h3 className="text-lg font-semibold text-primary-400 mb-4">Company Information</h3>
                       <div className="text-sm space-y-2">
                         <p><strong>English Tutor AI Inc.</strong></p>
                         <p>123 Learning Street, Suite 456</p>

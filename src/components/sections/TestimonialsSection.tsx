@@ -60,12 +60,12 @@ const TestimonialsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">What Our</span>{" "}
+            <span className="text-foreground-landing">What Our</span>{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Students Say
             </span>
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="text-xl text-primary-landing max-w-3xl mx-auto">
             Real success stories from learners who transformed their English speaking skills
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ const TestimonialsSection = () => {
               <GlassCard className="group relative h-full p-6">
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <Quote className="w-8 h-8 text-primary" />
+                  <Quote className="w-8 h-8 text-primary-landing" />
                 </div>
                 
                 {/* Rating Stars */}
@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
                 </div>
                 
                 {/* Quote */}
-                <blockquote className="text-foreground/90 mb-6 leading-relaxed">
+                <blockquote className="text-foreground-landing/90 mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
                 
@@ -103,15 +103,15 @@ const TestimonialsSection = () => {
                 <div className="flex items-center gap-3">
                   <Avatar className="w-10 h-10 ring-2 ring-primary/20">
                     <AvatarImage src="" alt={testimonial.name} />
-                    <AvatarFallback className="bg-gradient-feature text-primary font-semibold">
+                    <AvatarFallback className="bg-gradient-feature text-primary-landing font-semibold">
                       {testimonial.avatar}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <div className="font-semibold text-foreground text-sm">
+                    <div className="font-semibold text-foreground-landing text-sm">
                       {testimonial.name}
                     </div>
-                    <div className="text-white text-xs">
+                    <div className="text-primary-landing text-xs">
                       {testimonial.role}
                     </div>
                   </div>
@@ -134,16 +134,16 @@ const TestimonialsSection = () => {
         >
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">4.9/5</div>
-              <div className="text-sm text-white">Average Rating</div>
+              <div className="text-3xl font-bold text-primary-landing">4.9/5</div>
+              <div className="text-sm text-primary-landing">Average Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">50K+</div>
-              <div className="text-sm text-white">Happy Learners</div>
+              <div className="text-3xl font-bold text-primary-landing">50K+</div>
+              <div className="text-sm text-primary-landing">Happy Learners</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">1M+</div>
-              <div className="text-sm text-white">Conversations</div>
+              <div className="text-3xl font-bold text-primary-landing">1M+</div>
+              <div className="text-sm text-primary-landing">Conversations</div>
             </div>
           </div>
         </motion.div>

@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import OnBoarding from "@/components/OnBoarding";
-import heroImage from "@/assets/hero-bg-2.jpg";
+import heroImage from "@/assets/hero-bg-3.png";
 const Dashboard = () => {
   const [isOnBoardingCompleted,setIsOnBoardingCompleted] = useState(false);
   const [modalOpen,setModalOpen] = useState(false)
@@ -29,7 +29,7 @@ const Dashboard = () => {
   },[isOnBoardingCompleted])
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full" style={{ backgroundImage: `url(${heroImage})` ,backgroundSize: "cover",backgroundPosition: "center" }} >
+      <div className="min-h-screen flex md:w-full" style={{ backgroundImage: `url(${heroImage})` ,backgroundSize: "cover",backgroundPosition: "center" }} >
         <DashboardSidebar />
         <div className="flex-1 flex flex-col" >
           <DashboardHeader />

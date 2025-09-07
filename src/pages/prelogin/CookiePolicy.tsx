@@ -16,7 +16,7 @@ function CookiePolicyPage() {
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">AI</span>
+                <span className="text-primary font-bold text-lg">AI</span>
               </div>
               <h1 className="text-2xl font-bold text-gray-900">English Tutor AI</h1>
             </div>

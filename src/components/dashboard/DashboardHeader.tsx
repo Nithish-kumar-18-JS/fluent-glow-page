@@ -25,7 +25,7 @@ export function DashboardHeader() {
         <SidebarTrigger className="glass-panel hover:shadow-glow" />
         <div>
           <h1 className="text-lg font-semibold text-foreground">Hello, {user?.name} 👋</h1>
-          <p className="text-sm text-white">Ready for today's English practice?</p>
+          <p className="text-sm text-primary">Ready for today's English practice?</p>
         </div>
       </div>
 

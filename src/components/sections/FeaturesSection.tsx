@@ -41,12 +41,12 @@ const FeaturesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Powerful</span>{" "}
+            <span className="text-foreground-landing">Powerful</span>{" "}
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               Features
             </span>
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
+          <p className="text-xl text-primary-landing max-w-3xl mx-auto">
             Everything you need to master English speaking, powered by cutting-edge AI technology
           </p>
         </motion.div>
@@ -62,13 +62,13 @@ const FeaturesSection = () => {
             >
               <GlassCard className="group cursor-pointer h-full relative overflow-hidden">
                 {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-14 h-14 bg-gradient-feature rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="w-7 h-7 text-primary" />
+                      <feature.icon className="w-7 h-7 text-primary-landing" />
                     </div>
                     
                     {/* Decorative glow */}
@@ -76,16 +76,16 @@ const FeaturesSection = () => {
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground-landing group-hover:text-primary-landing transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-white leading-relaxed">
+                  <p className="text-primary-landing leading-relaxed">
                     {feature.description}
                   </p>
                   
                   {/* Learn More Link */}
                   <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-primary text-sm font-medium">
+                    <span className="text-primary-landing text-sm font-medium">
                       Learn more →
                     </span>
                   </div>
@@ -105,7 +105,7 @@ const FeaturesSection = () => {
         >
           <div className="glass-panel inline-flex items-center gap-3 px-6 py-3 rounded-full">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-foreground/80">
+            <span className="text-foreground-landing/80">
               Join thousands of learners improving their English daily
             </span>
           </div>

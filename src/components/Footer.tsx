@@ -14,9 +14,9 @@ const Footer = ({className}: {className?: string}) => {
 
       {/* Right side */}
       <div className="flex space-x-4">
-        <a href="#" className="hover:text-white">Support</a>
-        <a href="#" className="hover:text-white">Terms</a>
-        <a href="#" className="hover:text-white">Privacy Policy</a>
+        <a href="#" className="hover:text-primary">Support</a>
+        <a href="#" className="hover:text-primary">Terms</a>
+        <a href="#" className="hover:text-primary">Privacy Policy</a>
       </div>
     </footer>
   );

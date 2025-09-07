@@ -98,11 +98,11 @@ export default function OnBoarding({
       transition={{ duration: 0.8 }}
     >
       <div className="w-full h-full flex items-center justify-center pt-8">
-        <div className="glass-card-outline w-[90%] md:w-[65%] h-[700px] rounded-lg relative flex flex-col items-center justify-center">
+        <div className="glass-card-outline w-[88%] md:w-[65%] h-[600px] rounded-lg relative flex flex-col items-center justify-center">
           {/* Skip */}
           <div className="absolute top-4 right-4">
             <button
-              className="text-white px-4 py-2 rounded-full hover:text-primary transition-colors"
+              className="text-primary px-4 py-2 rounded-full hover:text-primary transition-colors"
               onClick={() => setIsOnBoardingCompleted(true)}
             >
               Skip
@@ -111,19 +111,19 @@ export default function OnBoarding({
 
           {/* Question */}
           <div className="w-[80%] h-[80%] flex flex-col items-center justify-center">
-            <p className="text-2xl md:text-3xl font-bold text-center">
+            <p className="text-xl md:text-xl font-bold text-center">
               {currentQuestion + 1}/{questions.length} — {q.q}
             </p>
 
             {/* Intro Screen */}
             {q.type === "intro" && (
-              <div className="mt-10 flex flex-col items-center space-y-6">
-                <img src="/onBoardingBackground.jpg" alt="onBoardingBackground" className="w-[550px] h-full object-cover rounded-lg"/>
+              <div className="flex flex-col items-center space-y-6">
+                <img src="/onBoardingBackground.jpg" alt="onBoardingBackground" className="w-[450px] h-full object-cover rounded-lg mt-10"/>
                 <p className="text-lg text-gray-300 text-center">
                   English AI tutor will guide you step by step. Let’s get started!
                 </p>
                 <GlassButton
-                  className="w-[150px] h-[50px]"
+                  className="w-[160px] h-[50px] "
                   onClick={handleNext}
                 >
                   Start
@@ -145,7 +145,7 @@ export default function OnBoarding({
                   >
                     <GlassButton
                       className={cn(
-                        "text-white text-lg font-bold px-4 py-2 w-full h-[50px]",
+                        "text-primary text-md font-bold px-4 py-2 w-full h-[50px]",
                       )}
                     variant={answers[currentQuestion] === option ? "primary" : "outline"}                      
                       onClick={() =>
@@ -171,7 +171,7 @@ export default function OnBoarding({
                       [currentQuestion]: e.target.value,
                     })
                   }
-                  className="w-full max-w-md h-16 text-xl p-4 rounded-full bg-transparent border border-gray-700 text-white"
+                  className="w-full max-w-md h-16 text-xl p-4 rounded-full bg-transparent border border-gray-700 text-primary"
                   placeholder="Type your answer..."
                 />
               </div>

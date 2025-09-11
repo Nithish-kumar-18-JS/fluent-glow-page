@@ -48,7 +48,7 @@ const HeroSection = () => {
     const user = auth.currentUser;
     // // ✅ Fetch a valid Firebase ID token
     const idToken = await user.getIdToken();
-  
+    console.log("idToken : ", idToken)
     // // Call your backend to verify + create user in Postgres
     const verifyToken = await verifyUser(idToken);
     console.log("verifyToken : ", verifyToken)

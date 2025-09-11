@@ -12,9 +12,22 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import OnBoarding from "@/components/OnBoarding";
 import heroImage from "@/assets/hero-bg-3.png";
+import { checkOnBoarding } from "@/apis/users";
+
 const Dashboard = () => {
   const [isOnBoardingCompleted,setIsOnBoardingCompleted] = useState(false);
   const [modalOpen,setModalOpen] = useState(false)
+
+  useEffect(() => {
+    const checkOnBoardingUser = async () => {
+      const response:any = await checkOnBoarding();
+      if(response){
+        setIsOnBoardingCompleted(true)
+      }
+    }
+    checkOnBoardingUser()
+  },[])
+
   if(!isOnBoardingCompleted){
     useEffect(() => {
       setModalOpen(true)

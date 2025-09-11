@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GlassCard } from "./ui/glass-card";
 import { GlassButton } from "./ui/glass-button";
 import { cn } from "@/lib/utils";
+import { onBoarding } from "@/apis/users";
 
 export default function OnBoarding({
   setIsOnBoardingCompleted,
@@ -81,12 +82,19 @@ export default function OnBoarding({
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setIsOnBoardingCompleted(true);
-    }, 1500);
+    let answer = {
+      english_proficiency_goal: answers[1],
+      why_are_learning_english: answers[2],
+      english_level: answers[3],
+      time_spent_english: answers[4],
+      streak_alerts: answers[5] === "Yes, keep me motivated!" ? true : false,
+      quick_challenge: answers[6]
+    }
+    await onBoarding(answer)
+    setIsOnBoardingCompleted(true)
+    setLoading(false)
   };
 
   const q = questions[currentQuestion];

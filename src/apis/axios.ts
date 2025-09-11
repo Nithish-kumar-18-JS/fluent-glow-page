@@ -1,7 +1,6 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { BASEURL } from "./index";
 
-const BASEURL = process.env.VITE_API_BASE_URL;
 const AxiosInstance = axios.create({
   baseURL: BASEURL,
 });
@@ -58,10 +57,7 @@ AxiosInstance.interceptors.response.use(
   
         } catch (refreshError) {
           // incase of failed refresh, re-direct to login page
-          const navigate = useNavigate(); // If you have React-router-dom
-          navigate("/");
-  
-  // or window.location.href = "/login" if you do not use react-router-dom
+          window.location.href = "/";
   
           return await Promise.reject(refreshError);
         }

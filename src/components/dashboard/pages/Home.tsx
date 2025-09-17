@@ -2,6 +2,7 @@ import { Calendar, Clock, BookOpen, Zap, Play } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GlassButton } from "@/components/ui/glass-button";
 import { motion } from "framer-motion";
+import useUserStore from "@/store/user";
 
 const stats = [
   { label: "Sessions Completed", value: "47", icon: Calendar, change: "+12 this week" },
@@ -11,6 +12,7 @@ const stats = [
 ];
 
 export default function Home() {
+  const user = useUserStore().getUser()
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -25,7 +27,7 @@ export default function Home() {
           transition={{ delay: 0.2 }}
         >
           <h1 className="text-3xl font-bold text-foreground mb-4">
-            Ready to practice, Sarah?
+            Ready to practice, {user?.name}?
           </h1>
           <p className="text-primary mb-6 max-w-md mx-auto">
             Continue your English learning journey with personalized AI conversations

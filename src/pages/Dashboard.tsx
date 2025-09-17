@@ -9,42 +9,77 @@ import Progress from "@/components/dashboard/pages/Progress";
 import Settings from "@/components/dashboard/pages/Settings";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import OnBoarding from "@/components/OnBoarding";
 import heroImage from "@/assets/hero-bg-3.png";
-import { checkOnBoarding } from "@/apis/users";
+import { checkOnBoarding, getUserProfile } from "@/apis/users";
+import useUserStore from "@/store/user";
 
 const Dashboard = () => {
-  const [isOnBoardingCompleted,setIsOnBoardingCompleted] = useState(false);
-  const [modalOpen,setModalOpen] = useState(false)
+  const [isOnBoardingCompleted, setIsOnBoardingCompleted] = useState<null | boolean>(null);
+  const setUser = useUserStore().setUser;
 
+  // Check if user finished onboarding
   useEffect(() => {
     const checkOnBoardingUser = async () => {
-      const response:any = await checkOnBoarding();
-      if(response){
-        setIsOnBoardingCompleted(true)
+      try {
+        const response: any = await checkOnBoarding();
+        setIsOnBoardingCompleted(!!response);
+      } catch (err) {
+        console.error("Error checking onboarding:", err);
+        setIsOnBoardingCompleted(false);
       }
-    }
-    checkOnBoardingUser()
-  },[])
+    };
+    checkOnBoardingUser();
+  }, []);
 
-  if(!isOnBoardingCompleted){
-    useEffect(() => {
-      setModalOpen(true)
-    },[])
-    return<div className="min-h-screen " style={{ backgroundImage: `url(${heroImage})`,backgroundSize: "cover",backgroundPosition: "center" ,}}>
-      <OnBoarding setIsOnBoardingCompleted={setIsOnBoardingCompleted}/>
-      <Footer/>
-      </div>
-  }
+  // Fetch user profile
   useEffect(() => {
-    console.log("isOnBoardingCompleted",isOnBoardingCompleted)
-  },[isOnBoardingCompleted])
+    const getProfile = async () => {
+      try {
+        const response: any = await getUserProfile();
+        setUser(response);
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
+      }
+    };
+    getProfile();
+  }, [setUser]);
+
+  // Show loader until onboarding status is known
+  if (isOnBoardingCompleted === null) {
+    return <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+  }
+
+  // Show onboarding if not completed
+  if (!isOnBoardingCompleted) {
+    return (
+      <div
+        className="min-h-screen"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <OnBoarding setIsOnBoardingCompleted={setIsOnBoardingCompleted} />
+        <Footer />
+      </div>
+    );
+  }
+
+  // Main dashboard
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex md:w-full" style={{ backgroundImage: `url(${heroImage})` ,backgroundSize: "cover",backgroundPosition: "center" }} >
+      <div
+        className="min-h-screen flex md:w-full"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <DashboardSidebar />
-        <div className="flex-1 flex flex-col" >
+        <div className="flex-1 flex flex-col">
           <DashboardHeader />
           <main className="flex-1 p-6">
             <Routes>
@@ -55,7 +90,7 @@ const Dashboard = () => {
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </main>
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </SidebarProvider>

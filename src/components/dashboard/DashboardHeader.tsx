@@ -2,23 +2,10 @@ import { Bell, User } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useEffect, useState } from "react";
-import { getUserProfile } from "@/apis/users";
+import useUserStore from "@/store/user";
 
 export function DashboardHeader() {
-  const [user, setUser] = useState<any>({})
-  useEffect(() => {
-    const getProfile = async () => {
-      try {
-        const response:any = await getUserProfile();
-        console.log(response)
-        setUser(response);
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getProfile();
-  }, [])
+  const user = useUserStore().getUser()
   return (
     <header className="h-16 glass-panel border-b border-glass-border/50 flex items-center justify-between px-6">
       <div className="flex items-center gap-4">

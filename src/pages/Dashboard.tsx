@@ -62,7 +62,7 @@ const Dashboard = () => {
         }}
       >
         <OnBoarding setIsOnBoardingCompleted={setIsOnBoardingCompleted} />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

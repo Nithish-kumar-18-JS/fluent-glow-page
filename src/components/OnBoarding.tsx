@@ -105,7 +105,7 @@ export default function OnBoarding({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="w-full h-full flex items-center justify-center pt-8">
+      <div className="w-full h-full flex items-center justify-center pt-28">
         <div className="glass-card-outline w-[88%] md:w-[65%] h-[600px] rounded-lg relative flex flex-col items-center justify-center">
           {/* Skip */}
           <div className="absolute top-4 right-4">

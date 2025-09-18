@@ -11,7 +11,7 @@ import Settings from "@/components/dashboard/pages/Settings";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import OnBoarding from "@/components/OnBoarding";
-import heroImage from "@/assets/hero-bg-3.png";
+import heroImage from "@/assets/bg-background.jpg";
 import { checkOnBoarding, getUserProfile } from "@/apis/users";
 import useUserStore from "@/store/user";
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Sparkles, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/hero-bg-3.png";
+import heroImage from "@/assets/bg-background.jpg";
 import { auth, googleProvider } from "../../../firebase.js";
 import { signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";

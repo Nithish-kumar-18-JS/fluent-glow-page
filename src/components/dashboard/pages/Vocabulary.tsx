@@ -1,44 +1,33 @@
-import { useState } from "react";
-import { Heart, BookOpen, Volume2, RotateCcw } from "lucide-react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react";
+import { Heart, BookOpen, Volume2, RotateCcw, RefreshCcwDot } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GlassButton } from "@/components/ui/glass-button";
 import { motion } from "framer-motion";
+import useVocabularyWordsStore from "@/store/vocabularyWords";
+import { getWords } from "@/apis/words";
 
-const vocabularyWords = [
-  {
-    word: "Serendipity",
-    meaning: "The occurrence of events by chance in a happy way",
-    example: "It was pure serendipity that I met my best friend at the coffee shop.",
-    difficulty: "Advanced",
-    saved: true
-  },
-  {
-    word: "Eloquent",
-    meaning: "Fluent or persuasive in speaking or writing",
-    example: "The politician gave an eloquent speech about climate change.",
-    difficulty: "Intermediate",
-    saved: false
-  },
-  {
-    word: "Ubiquitous",
-    meaning: "Present, appearing, or found everywhere",
-    example: "Smartphones have become ubiquitous in modern society.",
-    difficulty: "Advanced",
-    saved: true
-  },
-  {
-    word: "Resilient",
-    meaning: "Able to withstand or recover quickly from difficult conditions",
-    example: "Children are often more resilient than adults think.",
-    difficulty: "Intermediate",
-    saved: false
-  },
-];
+
 
 export default function Vocabulary() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [quizMode, setQuizMode] = useState(false);
-
+  const [refresh,setRefresh] = useState(false);
+  const wordsList:any = useVocabularyWordsStore((state) => state.getWordsByLevel());
+  const vocabularyWords:any =  wordsList
+  const setWords = useVocabularyWordsStore((state) => state.setWordsByLevel);
+  useEffect(()=>{
+    const getWordsList = async () => {
+      try {
+          const response:any = await getWords()
+          setWords(response)
+          setRefresh(false)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getWordsList()
+  },[refresh])
   const toggleCard = (index: number) => {
     setFlippedCards(prev => 
       prev.includes(index) 
@@ -51,6 +40,14 @@ export default function Vocabulary() {
     // In a real app, this would update the backend
     vocabularyWords[index].saved = !vocabularyWords[index].saved;
   };
+
+  const handlePlayAudio = (audio) => {
+    if(!audio){
+      return false
+    }
+    const audioPlayer = new Audio(audio)
+    audioPlayer.play().catch((err) => console.error("Audio play error:", err));
+  }
 
   return (
     <motion.div 
@@ -66,18 +63,19 @@ export default function Vocabulary() {
         </div>
         <div className="flex items-center gap-3">
           <GlassButton
-            variant={quizMode ? "primary" : "outline"}
-            onClick={() => setQuizMode(!quizMode)}
+            variant={"primary"}
+            onClick={() => setRefresh(!quizMode)}
           >
-            <BookOpen className="h-4 w-4 mr-2" />
-            {quizMode ? "Exit Quiz" : "Quiz Mode"}
+            <RefreshCcwDot className="h-4 w-4 mr-2" />
+              Refresh
           </GlassButton>
         </div>
       </div>
 
       {/* Vocabulary Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {vocabularyWords.map((vocab, index) => (
+        {
+          ["Beginner", "Intermediate", "Advanced"].map((level)=>(vocabularyWords[level].map((vocab, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -86,7 +84,7 @@ export default function Vocabulary() {
             className="group"
           >
             <GlassCard 
-              className={`p-0 h-64 cursor-pointer transition-all duration-500 transform-gpu ${
+              className={`p-0 h-72 cursor-pointer transition-all duration-500 transform-gpu ${
                 flippedCards.includes(index) ? 'rotateY-180' : ''
               }`}
               onClick={() => toggleCard(index)}
@@ -97,11 +95,11 @@ export default function Vocabulary() {
                   <div>
                     <div className="flex items-start justify-between mb-4">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        vocab.difficulty === "Advanced" 
+                        vocab.level === "Advanced" 
                           ? "bg-red-500/20 text-red-300"
                           : "bg-yellow-500/20 text-yellow-300"
                       }`}>
-                        {vocab.difficulty}
+                        {vocab.level}
                       </span>
                       <GlassButton
                         variant="ghost"
@@ -118,36 +116,48 @@ export default function Vocabulary() {
                           }`} 
                         />
                       </GlassButton>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        vocab.partsOfSpeech === "noun" 
+                          ? "bg-red-500/20 text-red-300"
+                          : "bg-yellow-500/20 text-yellow-300"
+                      }`}>
+                        {vocab.partsOfSpeech}
+                      </span>
                     </div>
                     <h3 className="text-2xl font-bold text-foreground text-center">
-                      {vocab.word}
-                    </h3>
-                  </div>
-                  
-                  <div className="text-center">
-                    <p className="text-sm text-primary mb-4">
-                      Click to see definition
-                    </p>
-                    <GlassButton
+                      {vocab.word} 
+                      {vocab.phonetics_audio && <GlassButton
                       variant="ghost"
                       size="icon"
                       onClick={(e) => {
                         e.stopPropagation();
+                        handlePlayAudio(vocab.phonetics_audio)
                         // Play pronunciation
                       }}
                     >
-                      <Volume2 className="h-4 w-4" />
-                    </GlassButton>
+                      <Volume2 className="h-4 w-4"  />
+                    </GlassButton>}
+                    </h3>
+                    <p className="text-md text-center">Pronounciation :{vocab.phonetics_text ? vocab.phonetics_text : "null"}</p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <p className="text-sm text-primary mb-4">
+                     Definition : {vocab.definitions ? vocab.definitions : "null"}
+                    </p>
+                    <p className="text-sm text-primary mb-4">
+                     Example : {vocab.example_Sentence}
+                    </p>
+                    
                   </div>
                 </div>
-
                 {/* Back of card */}
                 <div className="absolute inset-0 w-full h-full backface-hidden rotateY-180 p-6 flex flex-col justify-between">
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-3">{vocab.word}</h3>
-                    <p className="text-foreground mb-4 font-medium">{vocab.meaning}</p>
+                    <p className="text-foreground mb-4 font-medium">{vocab.definitions}</p>
                     <div className="p-3 glass-panel rounded-lg">
-                      <p className="text-sm text-primary italic">"{vocab.example}"</p>
+                      <p className="text-sm text-primary italic">"{vocab.example_Sentence}"</p>
                     </div>
                   </div>
                   
@@ -178,7 +188,8 @@ export default function Vocabulary() {
               </div>
             </GlassCard>
           </motion.div>
-        ))}
+        ))))
+        }
       </div>
 
       {/* Stats */}

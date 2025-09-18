@@ -26,13 +26,13 @@ export default function Home() {
           animate={{ scale: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="text-3xl font-bold text-foreground mb-4">
+          <h1 className="text-3xl font-bold text-black mb-4">
             Ready to practice, {user?.name}?
           </h1>
-          <p className="text-primary mb-6 max-w-md mx-auto">
+          <p className="text-black mb-6 max-w-md mx-auto">
             Continue your English learning journey with personalized AI conversations
           </p>
-          <GlassButton variant="default" size="lg" className="group text-foreground">
+          <GlassButton variant="primary" size="lg" className="group text-foreground">
             <Play className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
             Start Conversation
           </GlassButton>

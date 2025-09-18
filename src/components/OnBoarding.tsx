@@ -84,7 +84,7 @@ export default function OnBoarding({
 
   const handleSubmit = async () => {
     setLoading(true);
-    let answer = {
+    let answer = { 
       english_proficiency_goal: answers[1],
       why_are_learning_english: answers[2],
       english_level: answers[3],

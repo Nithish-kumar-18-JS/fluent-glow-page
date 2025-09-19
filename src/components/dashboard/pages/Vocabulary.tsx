@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import { Heart, BookOpen, Volume2, RotateCcw, RefreshCcwDot } from "lucide-react";
+import { Heart, BookOpen, Volume2, RotateCcw, RefreshCcwDot, CircleCheck } from "lucide-react";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GlassButton } from "@/components/ui/glass-button";
 import { motion } from "framer-motion";
 import useVocabularyWordsStore from "@/store/vocabularyWords";
-import { getWords } from "@/apis/words";
+import { getWords, updateWords } from "@/apis/words";
 
 
 
@@ -47,6 +47,17 @@ export default function Vocabulary() {
     }
     const audioPlayer = new Audio(audio)
     audioPlayer.play().catch((err) => console.error("Audio play error:", err));
+  }
+
+  const handleLearnedWords = async (id) => {
+    if(id){
+      let data = {
+        id,
+        status:"LEARNED"
+      }
+      const updateLearnedWord = await updateWords(data)
+      console.log(updateLearnedWord)
+    }
   }
 
   return (
@@ -101,6 +112,14 @@ export default function Vocabulary() {
                       }`}>
                         {vocab.level}
                       </span>
+                      
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        vocab.partsOfSpeech === "noun" 
+                          ? "bg-red-500/20 text-red-300"
+                          : "bg-yellow-500/20 text-yellow-300"
+                      }`}>
+                        {vocab.partsOfSpeech}
+                      </span>
                       <GlassButton
                         variant="ghost"
                         size="icon"
@@ -116,13 +135,6 @@ export default function Vocabulary() {
                           }`} 
                         />
                       </GlassButton>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        vocab.partsOfSpeech === "noun" 
-                          ? "bg-red-500/20 text-red-300"
-                          : "bg-yellow-500/20 text-yellow-300"
-                      }`}>
-                        {vocab.partsOfSpeech}
-                      </span>
                     </div>
                     <h3 className="text-2xl font-bold text-foreground text-center">
                       {vocab.word} 
@@ -149,6 +161,16 @@ export default function Vocabulary() {
                      Example : {vocab.example_Sentence}
                     </p>
                     
+                  </div>
+                  <div className="text-right">
+                     <GlassButton
+                      variant={"outline"}
+                      className="h-8"
+                      onClick={() => handleLearnedWords(vocab.id)}
+                    >
+                      <CircleCheck className="h-4 w-4 mr-2" />
+                        Mark as Learned
+                    </GlassButton>
                   </div>
                 </div>
                 {/* Back of card */}

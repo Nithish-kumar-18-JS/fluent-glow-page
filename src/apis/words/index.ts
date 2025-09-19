@@ -9,3 +9,12 @@ export const getWords = async () => {
         console.log(error)
     }
 }
+
+export const updateWords = async (data) => {
+    try {
+        const response = await AxiosInstance.post(`${BASEURL}/words/save_word`,data);
+        return response
+    } catch (error) {
+        console.log(error)
+    }
+}

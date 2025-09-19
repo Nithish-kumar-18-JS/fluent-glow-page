@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 export interface VocabularyWords {
+  id:Number;
   word: string;
   level: "Beginner" | "Intermediate" | "Advanced";
   partsOfSpeech: string;

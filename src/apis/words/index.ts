@@ -18,3 +18,12 @@ export const updateWords = async (data) => {
         console.log(error)
     }
 }
+
+export const wordsStats = async () => {
+    try {
+        const response = await AxiosInstance.get(`${BASEURL}/words/get_user_words_streaks`);
+        return response
+    } catch (error) {
+        console.log(error)
+    }
+}

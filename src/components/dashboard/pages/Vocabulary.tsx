@@ -5,7 +5,7 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { GlassButton } from "@/components/ui/glass-button";
 import { motion } from "framer-motion";
 import useVocabularyWordsStore from "@/store/vocabularyWords";
-import { getWords, updateWords } from "@/apis/words";
+import { getWords, updateWords, wordsStats } from "@/apis/words";
 
 
 
@@ -16,6 +16,29 @@ export default function Vocabulary() {
   const wordsList:any = useVocabularyWordsStore((state) => state.getWordsByLevel());
   const vocabularyWords:any =  wordsList
   const setWords = useVocabularyWordsStore((state) => state.setWordsByLevel);
+  const [wordsStatsData,setWordStatsData] = useState([
+    {
+        label: "Words Learned 📚",
+        value: 0,
+        message: "Start learning your first word today!"
+    },
+    {
+        label: "Daily Streak 🔥",
+        value: "-",
+        message: "No streaks yet. Keep practicing daily!"
+    },
+    {
+        label: "Weekly Goal 🏆",
+        value: `0/12`,
+        message: "Set your weekly goal and start learning!"
+    },
+    {
+        label: "Current Streak ⭐",
+        value: "-",
+        message: "Your streak will appear here once you start learning."
+    }
+])
+
   useEffect(()=>{
     const getWordsList = async () => {
       try {
@@ -28,6 +51,19 @@ export default function Vocabulary() {
     }
     getWordsList()
   },[refresh])
+
+  useEffect(()=>{
+    const getWordsStreaks = async () => {
+      try {
+        const response:any = await wordsStats()
+        setWordStatsData(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getWordsStreaks()
+  },[])
+
   const toggleCard = (index: number) => {
     setFlippedCards(prev => 
       prev.includes(index) 
@@ -136,21 +172,21 @@ export default function Vocabulary() {
                         />
                       </GlassButton>
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground text-center">
+                    <h3 className="text-2xl font-bold text-foreground text-center uppercase">
                       {vocab.word} 
-                      {vocab.phonetics_audio && <GlassButton
+                      {vocab.phoneticsAudio && <GlassButton
                       variant="ghost"
                       size="icon"
                       onClick={(e) => {
                         e.stopPropagation();
-                        handlePlayAudio(vocab.phonetics_audio)
+                        handlePlayAudio(vocab.phoneticsAudio)
                         // Play pronunciation
                       }}
                     >
                       <Volume2 className="h-4 w-4"  />
                     </GlassButton>}
                     </h3>
-                    <p className="text-md text-center">Pronounciation :{vocab.phonetics_text ? vocab.phonetics_text : "null"}</p>
+                    <p className="text-md text-center">Pronounciation :{vocab.phoneticsText ? vocab.phoneticsText : "Not Available"}</p>
                   </div>
                   
                   <div className="text-center">
@@ -158,7 +194,7 @@ export default function Vocabulary() {
                      Definition : {vocab.definitions ? vocab.definitions : "null"}
                     </p>
                     <p className="text-sm text-primary mb-4">
-                     Example : {vocab.example_Sentence}
+                     Example : {vocab.exampleSentence}
                     </p>
                     
                   </div>
@@ -216,12 +252,7 @@ export default function Vocabulary() {
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[
-          { label: "Words Learned", value: "342" },
-          { label: "Saved Words", value: "28" },
-          { label: "Weekly Goal", value: "15/20" },
-          { label: "Streak", value: "7 days" },
-        ].map((stat, index) => (
+        {wordsStatsData.map((stat, index) => (
           <GlassCard key={index} className="p-4 text-center">
             <p className="text-2xl font-bold text-foreground">{stat.value}</p>
             <p className="text-sm text-primary">{stat.label}</p>

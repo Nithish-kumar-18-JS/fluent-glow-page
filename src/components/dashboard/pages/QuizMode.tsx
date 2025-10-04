@@ -220,18 +220,18 @@ export default function QuizMode({ onExit }: QuizModeProps) {
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.3 }}
         >
-          <GlassCard className="p-8 space-y-6">
+          <GlassCard className="p-6 space-y-4">
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
+              <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-3">
                 Word: {question.word}
               </div>
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-xl font-bold text-foreground">
                 {question.question}
               </h2>
             </div>
 
             {/* Options */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               {question.options.map((option, idx) => (
                 <motion.div
                   key={option}
@@ -241,13 +241,13 @@ export default function QuizMode({ onExit }: QuizModeProps) {
                 >
                   <GlassButton
                     variant={selectedAnswer === option ? "primary" : "outline"}
-                    className={`w-full justify-start text-left h-auto py-4 px-6 text-base ${
+                    className={`w-full justify-start text-left h-auto py-3 px-4 text-sm ${
                       selectedAnswer === option ? 'shadow-glow-hover scale-105' : ''
                     }`}
                     onClick={() => handleAnswerSelect(option)}
                   >
-                    <span className="flex items-center gap-3">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-current flex items-center justify-center font-semibold">
+                    <span className="flex items-center gap-2">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-current flex items-center justify-center font-semibold text-xs">
                         {String.fromCharCode(65 + idx)}
                       </span>
                       <span>{option}</span>
@@ -258,13 +258,12 @@ export default function QuizMode({ onExit }: QuizModeProps) {
             </div>
 
             {/* Next Button */}
-            <div className="flex justify-end pt-4">
+            <div className="flex justify-end pt-2">
               <GlassButton
                 variant="primary"
-                size="lg"
                 onClick={handleNext}
                 disabled={!selectedAnswer}
-                className="min-w-32"
+                className="min-w-28"
               >
                 {isLastQuestion ? "Finish" : "Next"}
               </GlassButton>

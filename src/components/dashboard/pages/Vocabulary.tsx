@@ -6,6 +6,7 @@ import { GlassButton } from "@/components/ui/glass-button";
 import { motion } from "framer-motion";
 import useVocabularyWordsStore from "@/store/vocabularyWords";
 import { getWords, updateWords, wordsStats } from "@/apis/words";
+import QuizMode from "./QuizMode";
 
 
 
@@ -96,6 +97,11 @@ export default function Vocabulary() {
     }
   }
 
+  // Show Quiz Mode if active
+  if (quizMode) {
+    return <QuizMode onExit={() => setQuizMode(false)} />;
+  }
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -110,11 +116,18 @@ export default function Vocabulary() {
         </div>
         <div className="flex items-center gap-3">
           <GlassButton
-            variant={"primary"}
-            onClick={() => setRefresh(!quizMode)}
+            variant="outline"
+            onClick={() => setQuizMode(!quizMode)}
+          >
+            <BookOpen className="h-4 w-4 mr-2" />
+            Quiz Mode
+          </GlassButton>
+          <GlassButton
+            variant="primary"
+            onClick={() => setRefresh(true)}
           >
             <RefreshCcwDot className="h-4 w-4 mr-2" />
-              Refresh
+            Refresh
           </GlassButton>
         </div>
       </div>

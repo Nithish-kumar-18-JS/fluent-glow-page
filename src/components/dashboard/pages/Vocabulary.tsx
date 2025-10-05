@@ -55,27 +55,23 @@ export default function Vocabulary() {
     getWordsList()
   },[refresh])
 
-  useEffect(()=>{
-    const getWordsStreaks = async () => {
+  useEffect(() => {
+    const fetchStatsAndQuiz = async () => {
       try {
-        const response:any = await wordsStats()
-        setWordStatsData(response.data)
+        // First, get word stats
+        const response: any = await wordsStats();
+        setWordStatsData(response.data);
+        // Then, get quiz
+        const result = await getQuiz();
+        if (result) {
+          setQuizData(result.quiz);
+        }
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
-    getWordsStreaks()
-  },[])
-
-    useEffect(()=>{
-    const fetchQuiz = async () => {
-      let result = await getQuiz()
-      if(result){
-        setQuizData(result.quiz)
-      }
-    }
-    fetchQuiz()
-  },[])
+    };
+    fetchStatsAndQuiz();
+  }, []);
 
   const toggleCard = (index: number) => {
     setFlippedCards(prev => 
@@ -129,6 +125,7 @@ export default function Vocabulary() {
         <div className="flex items-center gap-3">
           <GlassButton
             variant="outline"
+            disabled={quizData.length === 0}
             onClick={() => setQuizMode(!quizMode)}
           >
             <BookOpen className="h-4 w-4 mr-2" />

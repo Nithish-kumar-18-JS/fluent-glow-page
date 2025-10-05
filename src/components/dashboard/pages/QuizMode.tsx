@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GlassButton } from "@/components/ui/glass-button";
 import { ArrowLeft, CheckCircle2, XCircle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { getQuiz } from "@/apis/quiz";
 
 interface QuizQuestion {
   word: string;
@@ -14,42 +15,11 @@ interface QuizQuestion {
 
 interface QuizModeProps {
   onExit: () => void;
+  quizData : any
 }
 
-const quizData: QuizQuestion[] = [
-  {
-    word: "serene",
-    question: "If I say someone looks serene, what do I mean they look like?",
-    options: ["angry", "restless", "peaceful", "excited"],
-    answer: "peaceful"
-  },
-  {
-    word: "diligent",
-    question: "When we describe a student as diligent, what quality are we usually talking about?",
-    options: ["lazy", "careless", "hardworking", "impulsive"],
-    answer: "hardworking"
-  },
-  {
-    word: "eloquent",
-    question: "What does it mean when someone speaks in an eloquent manner?",
-    options: ["unclear", "fluent and persuasive", "quietly", "angrily"],
-    answer: "fluent and persuasive"
-  },
-  {
-    word: "resilient",
-    question: "A resilient person is someone who:",
-    options: ["gives up easily", "bounces back from difficulties", "avoids challenges", "never faces problems"],
-    answer: "bounces back from difficulties"
-  },
-  {
-    word: "meticulous",
-    question: "If someone is meticulous in their work, they are:",
-    options: ["careless", "very careful about details", "quick", "messy"],
-    answer: "very careful about details"
-  }
-];
 
-export default function QuizMode({ onExit }: QuizModeProps) {
+export default function QuizMode({ onExit , quizData=[] }: QuizModeProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [answers, setAnswers] = useState<{ question: number; selected: string; correct: string }[]>([]);
@@ -155,7 +125,7 @@ export default function QuizMode({ onExit }: QuizModeProps) {
                       )}
                       <div className="flex-1">
                         <p className="font-semibold text-foreground mb-1">
-                          {quizData[ans.question].word}
+                          {quizData[ans.question].word.charAt(0).toUpperCase() + quizData[ans.question].word.slice(1)}
                         </p>
                         <p className="text-sm text-primary">
                           Your answer: <span className={isCorrect ? 'text-green-400' : 'text-red-400'}>{ans.selected}</span>
@@ -223,7 +193,7 @@ export default function QuizMode({ onExit }: QuizModeProps) {
           <GlassCard className="p-6 space-y-4">
             <div>
               <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-3">
-                Word: {question.word}
+                Word: {question.word.charAt(0).toUpperCase() + question.word.slice(1)}
               </div>
               <h2 className="text-xl font-bold text-foreground">
                 {question.question}

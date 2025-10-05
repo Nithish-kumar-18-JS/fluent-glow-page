@@ -7,12 +7,14 @@ import { motion } from "framer-motion";
 import useVocabularyWordsStore from "@/store/vocabularyWords";
 import { getWords, updateWords, wordsStats } from "@/apis/words";
 import QuizMode from "./QuizMode";
+import { getQuiz } from "@/apis/quiz";
 
 
 
 export default function Vocabulary() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [quizMode, setQuizMode] = useState(false);
+  const [quizData,setQuizData] = useState([])
   const [refresh,setRefresh] = useState(false);
   const wordsList:any = useVocabularyWordsStore((state) => state.getWordsByLevel());
   const vocabularyWords:any =  wordsList
@@ -65,6 +67,16 @@ export default function Vocabulary() {
     getWordsStreaks()
   },[])
 
+    useEffect(()=>{
+    const fetchQuiz = async () => {
+      let result = await getQuiz()
+      if(result){
+        setQuizData(result.quiz)
+      }
+    }
+    fetchQuiz()
+  },[])
+
   const toggleCard = (index: number) => {
     setFlippedCards(prev => 
       prev.includes(index) 
@@ -99,7 +111,7 @@ export default function Vocabulary() {
 
   // Show Quiz Mode if active
   if (quizMode) {
-    return <QuizMode onExit={() => setQuizMode(false)} />;
+    return <QuizMode onExit={() => setQuizMode(false)} quizData={quizData}/>;
   }
 
   return (

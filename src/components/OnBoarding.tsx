@@ -96,7 +96,7 @@ export default function OnBoarding({
     setIsOnBoardingCompleted(true)
     setLoading(false)
   };
-
+ 
   const q = questions[currentQuestion];
 
   return (

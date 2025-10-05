@@ -92,8 +92,8 @@ export default function OnBoarding({
       streak_alerts: answers[5] === "Yes, keep me motivated!" ? true : false,
       quick_challenge: answers[6]
     }
-    setIsOnBoardingCompleted(true)
     await onBoarding(answer)
+    setIsOnBoardingCompleted(true)
     setLoading(false)
   };
 

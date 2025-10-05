@@ -13,9 +13,9 @@ const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
     useEffect(() => {
         const unsub = auth.onAuthStateChanged((currentUser) => {
             setUser(currentUser);
-            // if (!currentUser) {
-            //     navigate("/");
-            // }
+            if (!currentUser) {
+                navigate("/");
+            }
         });
         return () => unsub();
     }, [navigate]);

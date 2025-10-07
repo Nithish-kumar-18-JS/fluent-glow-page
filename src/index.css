@@ -2,138 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-/* English Tutor AI Glassmorphism Design System */
+/* English Tutor AI Clean Black & White Design System */
 
 @layer base {
   :root {
-    /* Background System - Deep Navy to Purple Gradient */
-    --background: 220 25% 6%;
-    --background-secondary: 260 30% 15%;
-    --foreground: 220 15% 95%;
+    /* Light Mode - Clean White Background */
+    --background: 0 0% 100%;
+    --background-secondary: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
     /* Glass System */
-    --glass: 220 15% 95%;
-    --glass-foreground: 220 15% 95%;
-    --glass-border: 220 25% 25%;
+    --glass: 0 0% 98%;
+    --glass-foreground: 0 0% 10%;
+    --glass-border: 0 0% 90%;
     
     /* Card System */
-    --card: 220 15% 95%;
-    --card-foreground: 220 15% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    /* Neon Accent System */
-    --primary: 210 100% 60%;        /* Neon Blue */
-    --primary-foreground: 220 25% 6%;
-    --primary-glow: 210 100% 75%;
+    /* Primary - Black accent */
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 0 0% 20%;
     
-    --secondary: 280 100% 70%;      /* Neon Violet */
-    --secondary-foreground: 220 25% 6%;
-    --secondary-glow: 280 100% 80%;
+    /* Secondary - Dark Gray */
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-glow: 0 0% 35%;
 
     /* Muted System */
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 70%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
 
     /* Accent System */
-    --accent: 200 100% 65%;         /* Cyan accent */
-    --accent-foreground: 220 25% 6%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
 
     /* Interactive States */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 15% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 25% 25%;
-    --input: 220 25% 15%;
-    --ring: 210 100% 60%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 0 0% 20%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220, 25%, 6%) 0%, hsl(260, 30%, 15%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 98%) 100%);
     --gradient-glass: linear-gradient(135deg, 
-      hsla(220, 15%, 95%, 0.1) 0%, 
-      hsla(220, 15%, 95%, 0.05) 100%);
+      hsla(0, 0%, 100%, 0.8) 0%, 
+      hsla(0, 0%, 98%, 0.9) 100%);
     --gradient-glow: linear-gradient(135deg, 
-      hsl(210, 100%, 60%) 0%, 
-      hsl(280, 100%, 70%) 100%);
+      hsl(0, 0%, 10%) 0%, 
+      hsl(0, 0%, 25%) 100%);
     --gradient-feature: linear-gradient(135deg, 
-      hsla(210, 100%, 60%, 0.1) 0%, 
-      hsla(280, 100%, 70%, 0.1) 100%);
+      hsla(0, 0%, 95%, 0.5) 0%, 
+      hsla(0, 0%, 98%, 0.8) 100%);
 
     /* Shadows */
-    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    --shadow-glow: 0 0 40px hsla(210, 100%, 60%, 0.3);
-    --shadow-glow-hover: 0 0 60px hsla(210, 100%, 60%, 0.5);
-    --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --shadow-glass: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    --shadow-glow-hover: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-glow: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 20%;
   }
 
-  /* Dark mode uses same glassmorphism theme */
+  /* Dark Mode - Clean Black Background */
   .dark {
-    --background: 220 25% 6%;
-    --background-secondary: 260 30% 15%;
-    --foreground: 220 15% 95%;
-    --glass: 220 15% 95%;
-    --glass-foreground: 220 15% 95%;
-    --glass-border: 220 25% 25%;
-    --card: 220 15% 95%;
-    --card-foreground: 220 15% 95%;
-    --primary: 210 100% 60%;
-    --primary-foreground: 220 25% 6%;
-    --primary-glow: 210 100% 75%;
-    --secondary: 280 100% 70%;
-    --secondary-foreground: 220 25% 6%;
-    --secondary-glow: 280 100% 80%;
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 70%;
-    --accent: 200 100% 65%;
-    --accent-foreground: 220 25% 6%;
+    --background: 0 0% 8%;
+    --background-secondary: 0 0% 12%;
+    --foreground: 0 0% 95%;
+    --glass: 0 0% 15%;
+    --glass-foreground: 0 0% 95%;
+    --glass-border: 0 0% 25%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
+    --primary-glow: 0 0% 85%;
+    --secondary: 0 0% 80%;
+    --secondary-foreground: 0 0% 10%;
+    --secondary-glow: 0 0% 70%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 15% 95%;
-    --border: 220 25% 25%;
-    --input: 220 25% 15%;
-    --ring: 210 100% 60%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 25%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 80%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 90%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 0 0% 80%;
   }
 }
 
-.border-primary {
-  color: transparent !important;
-}
-
-.text-primary-landing {
-  color: white !important;
-}
-
-.text-primary{
-  color: rgb(255, 255, 255) !important
-}
-
-.text-foreground-landing {
-  color: white !important
-}
-
-
-.text-foreground {
-  color: rgb(255, 255, 255) !important
-}
 
 
 
@@ -143,29 +125,23 @@
   }
 
   body {
-    @apply text-foreground;
-    background: var(--gradient-primary);
+    @apply text-foreground bg-background;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /* Glassmorphism Base Classes */
+  /* Clean Glass Base Classes */
   .glass-panel {
-    background: linear-gradient(135deg, 
-      hsla(220, 15%, 95%, 0.1) 0%, 
-      hsla(220, 15%, 95%, 0.05) 100%);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsla(220, 25%, 25%, 0.3);
+    @apply bg-card backdrop-blur-sm border border-border;
     box-shadow: var(--shadow-glass);
   }
 
   .glass-card-outline {
-    @apply rounded-2xl;
-    @apply border border-glass-border bg-gradient-glass text-foreground;
-    border: 1px solid hsla(220, 25%, 25%, 0.3);
+    @apply rounded-xl border border-border bg-card text-card-foreground;
   }
 
   .glass-card {
-    @apply glass-panel rounded-2xl;
+    @apply glass-panel rounded-xl;
   }
 
   .glow-effect {
@@ -194,15 +170,13 @@
   .particle {
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(45deg, 
-      hsla(210, 100%, 60%, 0.4), 
-      hsla(280, 100%, 70%, 0.4));
+    background: hsl(var(--muted));
     animation: float 6s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-    50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.6; }
   }
 
   /* Scroll animations */

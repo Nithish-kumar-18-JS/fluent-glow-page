@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Sparkles, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/bg-background.jpg";
 import { auth, googleProvider } from "../../../firebase.js";
@@ -68,17 +69,23 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-primary/80" />
-        <div className="absolute top-4 right-4 z-10">
-         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8"
-        >
-        <GlassButton variant="hero" size="lg" className="hover:border-primary/60">
+        <div className="absolute top-4 right-4 z-10 flex items-center gap-3">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <ThemeToggle />
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <GlassButton variant="hero" size="lg" className="hover:border-primary/60">
               Login
-        </GlassButton>
-        </motion.div>
+            </GlassButton>
+          </motion.div>
         </div>
       </div>
       
@@ -100,8 +107,8 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             // className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full text-sm font-medium text-foreground-landing/80"
           >
-            <GlassButton variant="primary" size="lg" className="text-black">
-            <Sparkles className="w-4 h-4 text-black mr-2" />
+            <GlassButton variant="primary" size="lg">
+            <Sparkles className="w-4 h-4 mr-2" />
             AI-Powered English Learning
             </GlassButton>
           </motion.div>
@@ -113,7 +120,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
           >
-            <span className="text-foreground-landing">Speak English with</span>
+            <span className="text-foreground">Speak English with</span>
             <br />
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               Confidence
@@ -125,7 +132,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl md:text-2xl text-primary-landing max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
             Your personal AI tutor for fluent conversations. Practice speaking, 
             get instant feedback, and track your progress with advanced AI technology.
@@ -138,13 +145,13 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <GlassButton variant="outline" size="xl" className="group text-white" onClick={handleLoginWithGoogle}>
+            <GlassButton variant="outline" size="xl" className="group" onClick={handleLoginWithGoogle}>
               <img src="google.svg" alt="google" className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Sign in with google
             </GlassButton>
             
             <Link to="/dashboard">
-              <GlassButton variant="hero" size="xl" className="group text-white">
+              <GlassButton variant="hero" size="xl" className="group">
                 View Dashboard
                 <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </GlassButton>
@@ -164,8 +171,8 @@ const HeroSection = () => {
               { number: "50+", label: "Languages Supported" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl font-bold text-primary-landing">{stat.number}</div>
-                <div className="text-sm text-primary-landing">{stat.label}</div>
+                <div className="text-2xl font-bold text-foreground">{stat.number}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </motion.div>

@@ -2,6 +2,7 @@ import { Bell, User } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { GlassButton } from "@/components/ui/glass-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import useUserStore from "@/store/user";
 
 export function DashboardHeader() {
@@ -17,6 +18,8 @@ export function DashboardHeader() {
       </div>
 
       <div className="flex items-center gap-4">
+        <ThemeToggle />
+        
         <div className="relative">
           <GlassButton variant="ghost" size="icon">
             <Bell className="h-5 w-5" />

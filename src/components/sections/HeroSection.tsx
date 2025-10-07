@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { GlassButton } from "@/components/ui/glass-button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Sparkles, MessageCircle } from "lucide-react";
-import heroImage from "@/assets/bg-background.jpg";
 import { auth, googleProvider } from "../../../firebase.js";
 import { signInWithPopup, signInWithRedirect, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -62,31 +61,25 @@ const HeroSection = () => {
   
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-primary/80" />
-        <div className="absolute top-4 right-4 z-10 flex items-center gap-3">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <ThemeToggle />
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <GlassButton variant="hero" size="lg" className="hover:border-primary/60">
-              Login
-            </GlassButton>
-          </motion.div>
-        </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Header Controls */}
+      <div className="absolute top-4 right-4 z-10 flex items-center gap-3">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <ThemeToggle />
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <GlassButton variant="hero" size="lg" className="hover:border-primary/60">
+            Login
+          </GlassButton>
+        </motion.div>
       </div>
       
       {/* Floating Particles */}

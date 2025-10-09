@@ -43,7 +43,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-glow rounded-lg flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-primary-landing-foreground" />
+                <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-foreground-landing">
                 English Tutor AI

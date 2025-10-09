@@ -53,7 +53,7 @@ const HowItWorksSection = () => {
             >
               <GlassCard className="text-center group relative overflow-hidden">
                 {/* Step Number */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-glow rounded-full flex items-center justify-center text-primary-landing-foreground font-bold text-lg shadow-glow">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-glow rounded-full flex items-center justify-center text-primary-landing-foreground text-white font-bold text-lg shadow-glow">
                   {index + 1}
                 </div>
                 

@@ -138,7 +138,7 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
-            <GlassButton variant="outline" size="xl" className="group" onClick={handleLoginWithGoogle}>
+            <GlassButton variant="primary" size="xl" className="group" onClick={handleLoginWithGoogle}>
               <img src="google.svg" alt="google" className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Sign in with google
             </GlassButton>

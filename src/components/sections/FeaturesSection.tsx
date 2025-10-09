@@ -105,7 +105,7 @@ const FeaturesSection = () => {
         >
           <div className="glass-panel inline-flex items-center gap-3 px-6 py-3 rounded-full">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-white">
+            <span className="text:black dark:text-white">
               Join thousands of learners improving their English daily
             </span>
           </div>

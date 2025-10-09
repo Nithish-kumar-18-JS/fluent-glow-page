@@ -9,7 +9,7 @@ const glassButtonVariants = cva(
     variants: {
       variant: {
         default: "glass-panel text-glass-foreground hover:shadow-glow",
-        primary: "glass-panel text-primary-foreground bg-gradient-glow shadow-glow hover:shadow-glow-hover hover:scale-105",
+        primary: "glass-panel text-white bg-gradient-glow shadow-glow hover:shadow-glow-hover hover:scale-105",
         hero: "glass-panel text-foreground border-2 border-primary/30 shadow-glow hover:shadow-glow-hover hover:scale-105 hover:border-primary/60",
         ghost: "text-foreground/80 hover:text-foreground hover:bg-glass/5",
         outline: "border border-glass-border bg-gradient-glass text-foreground hover:bg-glass/10 hover:shadow-glow"

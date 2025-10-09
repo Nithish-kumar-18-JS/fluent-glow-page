@@ -95,7 +95,7 @@ const TestimonialsSection = () => {
                 </div>
                 
                 {/* Quote */}
-                <blockquote className="text-white mb-6 leading-relaxed">
+                <blockquote className="text-black dark:text-white mb-6 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
                 

@@ -28,7 +28,7 @@ const CTASection = () => {
               className="flex justify-center mb-8"
             >
               <div className="w-16 h-16 bg-gradient-glow rounded-2xl flex items-center justify-center shadow-glow">
-                <Rocket className="w-8 h-8 text-primary-landing-foreground" />
+                <Rocket className="w-8 h-8 text-white text-primary-landing-foreground" />
               </div>
             </motion.div>
             

@@ -120,7 +120,7 @@ export default function Vocabulary() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground">Vocabulary Builder</h1>
-          <p className="text-primary">Expand your English vocabulary with interactive cards</p>
+          <p className="text-muted-foreground">Expand your English vocabulary with interactive cards</p>
         </div>
         <div className="flex items-center gap-3">
           <GlassButton
@@ -212,10 +212,10 @@ export default function Vocabulary() {
                   </div>
                   
                   <div className="text-center">
-                    <p className="text-sm text-primary mb-4">
+                    <p className="text-sm text-muted-foreground mb-4">
                      Definition : {vocab.definitions ? vocab.definitions : "null"}
                     </p>
-                    <p className="text-sm text-primary mb-4">
+                    <p className="text-sm text-muted-foreground mb-4">
                      Example : {vocab.exampleSentence}
                     </p>
                     
@@ -236,8 +236,8 @@ export default function Vocabulary() {
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-3">{vocab.word}</h3>
                     <p className="text-foreground mb-4 font-medium">{vocab.definitions}</p>
-                    <div className="p-3 glass-panel rounded-lg">
-                      <p className="text-sm text-primary italic">"{vocab.example_Sentence}"</p>
+                    <div className="p-3 bg-muted/50 rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground italic">"{vocab.example_Sentence}"</p>
                     </div>
                   </div>
                   
@@ -277,7 +277,7 @@ export default function Vocabulary() {
         {wordsStatsData.map((stat, index) => (
           <GlassCard key={index} className="p-4 text-center">
             <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-            <p className="text-sm text-primary">{stat.label}</p>
+            <p className="text-sm text-muted-foreground">{stat.label}</p>
           </GlassCard>
         ))}
       </div>

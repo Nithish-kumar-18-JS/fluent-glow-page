@@ -113,7 +113,7 @@ export default function Grammar() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground">Improve Grammar</h1>
-          <p className="text-primary">Master English grammar with interactive rule cards</p>
+          <p className="text-muted-foreground">Master English grammar with interactive rule cards</p>
         </div>
         <div className="flex items-center gap-3">
           <GlassButton
@@ -184,12 +184,12 @@ export default function Grammar() {
                   </div>
                   
                   <div className="text-center space-y-3">
-                    <div className="p-3 glass-panel rounded-lg">
-                      <p className="text-sm text-primary font-medium mb-2">Rule:</p>
+                    <div className="p-3 bg-muted/50 rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground font-medium mb-2">Rule:</p>
                       <p className="text-sm text-foreground">{rule.rule}</p>
                     </div>
-                    <div className="p-3 glass-panel rounded-lg">
-                      <p className="text-sm text-primary font-medium mb-2">Formula:</p>
+                    <div className="p-3 bg-muted/50 rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground font-medium mb-2">Formula:</p>
                       <p className="text-sm text-foreground italic">{rule.formula}</p>
                     </div>
                   </div>
@@ -214,12 +214,12 @@ export default function Grammar() {
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-3">{rule.title}</h3>
                     <p className="text-foreground mb-4 font-medium">{rule.rule}</p>
-                    <div className="p-3 glass-panel rounded-lg mb-3">
-                      <p className="text-sm text-primary font-medium mb-2">Example:</p>
+                    <div className="p-3 bg-muted/50 rounded-lg border border-border mb-3">
+                      <p className="text-sm text-muted-foreground font-medium mb-2">Example:</p>
                       <p className="text-sm text-foreground italic">"{rule.example}"</p>
                     </div>
-                    <div className="p-3 glass-panel rounded-lg">
-                      <p className="text-sm text-primary font-medium mb-2">Formula:</p>
+                    <div className="p-3 bg-muted/50 rounded-lg border border-border">
+                      <p className="text-sm text-muted-foreground font-medium mb-2">Formula:</p>
                       <p className="text-sm text-foreground">{rule.formula}</p>
                     </div>
                   </div>
@@ -249,7 +249,7 @@ export default function Grammar() {
         {statsData.map((stat, index) => (
           <GlassCard key={index} className="p-4 text-center">
             <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-            <p className="text-sm text-primary">{stat.label}</p>
+            <p className="text-sm text-muted-foreground">{stat.label}</p>
           </GlassCard>
         ))}
       </div>

@@ -8,11 +8,11 @@ const glassButtonVariants = cva(
   {
     variants: {
       variant: {
-        default: "glass-panel text-glass-foreground hover:shadow-glow",
-        primary: "glass-panel text-white bg-gradient-glow shadow-glow hover:shadow-glow-hover hover:scale-105",
-        hero: "glass-panel text-foreground border-2 border-primary/30 shadow-glow hover:shadow-glow-hover hover:scale-105 hover:border-primary/60",
-        ghost: "text-foreground/80 hover:text-foreground hover:bg-glass/5",
-        outline: "glass-panel text-white bg-gradient-glow shadow-glow hover:shadow-glow-hover hover:scale-105"
+        default: "glass-panel text-foreground hover:shadow-glow hover:bg-muted/50",
+        primary: "bg-primary text-primary-foreground shadow-md hover:shadow-glow-hover hover:scale-105",
+        hero: "glass-panel text-foreground border-2 border-border shadow-md hover:shadow-glow hover:scale-105 hover:border-primary",
+        ghost: "text-foreground/80 hover:text-foreground hover:bg-muted/50",
+        outline: "border border-border bg-background text-foreground hover:bg-muted hover:shadow-md"
       },
       size: {
         default: "h-10 px-4 py-2",

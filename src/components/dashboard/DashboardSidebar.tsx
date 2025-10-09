@@ -35,24 +35,24 @@ export function DashboardSidebar() {
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "glass-panel text-primary shadow-glow" 
-      : "text-primary hover:text-foreground hover:bg-glass/10";
+      ? "bg-muted text-foreground font-medium shadow-sm" 
+      : "text-muted-foreground hover:text-foreground hover:bg-muted/50";
 
   return (
     <Sidebar
-      className={`${collapsed ? "w-16" : "w-64"} glass-panel border-r border-glass-border`}
+      className={`${collapsed ? "w-16" : "w-64"} border-r border-border bg-card`}
       collapsible="icon"
     >
       <SidebarContent className="bg-transparent">
-        <div className="p-4 border-b border-glass-border/50">
+        <div className="p-4 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/60 rounded-lg flex items-center justify-center">
-              <span className="text-primary font-bold text-sm">ET</span>
+            <div className="w-8 h-8 bg-primary text-primary-foreground rounded-lg flex items-center justify-center">
+              <span className="font-bold text-sm">ET</span>
             </div>
             {!collapsed && (
               <div>
                 <h2 className="text-lg font-semibold text-foreground">English Tutor AI</h2>
-                <p className="text-xs text-primary">Your AI Learning Companion</p>
+                <p className="text-xs text-muted-foreground">Your AI Learning Companion</p>
               </div>
             )}
           </div>
@@ -80,7 +80,7 @@ export function DashboardSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <div className="mt-auto p-4 border-t border-glass-border/50">
+        <div className="mt-auto p-4 border-t border-border">
           <GlassButton
             variant="outline"
             size="sm"
@@ -88,7 +88,7 @@ export function DashboardSidebar() {
               auth.signOut();
               navigate("/");  
             }}
-            className="w-full justify-start text-primary hover:text-foreground"
+            className="w-full justify-start text-foreground hover:text-foreground"
           >
             <LogOut className="h-4 w-4" />
             {!collapsed && <span className="ml-2">Logout</span>}

@@ -56,11 +56,11 @@ const Dashboard = () => {
     return (
       <div
         className="min-h-screen"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        // style={{
+        //   backgroundImage: `url(${heroImage})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        // }}
       >
         <OnBoarding setIsOnBoardingCompleted={setIsOnBoardingCompleted} />
         {/* <Footer /> */}
@@ -73,11 +73,11 @@ const Dashboard = () => {
     <SidebarProvider>
       <div
         className="min-h-screen flex md:w-full"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        // style={{
+        //   backgroundImage: `url(${heroImage})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        // }}
       >
         <DashboardSidebar />
         <div className="flex-1 flex flex-col">

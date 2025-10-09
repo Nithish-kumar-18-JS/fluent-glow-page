@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { Home, MessageSquare, BookOpen, TrendingUp, Settings, LogOut } from "lucide-react";
+import { Home, MessageSquare, BookOpen, TrendingUp, Settings, LogOut, BookMarked } from "lucide-react";
 import { auth } from "../../../firebase.js";
 import {
   Sidebar,
@@ -20,6 +20,7 @@ const items = [
   { title: "Home", url: "/dashboard", icon: Home },
   { title: "Practice", url: "/dashboard/practice", icon: MessageSquare },
   { title: "Vocabulary", url: "/dashboard/vocabulary", icon: BookOpen },
+  { title: "Improve Grammar", url: "/dashboard/grammar", icon: BookMarked },
   { title: "Progress", url: "/dashboard/progress", icon: TrendingUp },
   { title: "Settings", url: "/dashboard/settings", icon: Settings },
 ];

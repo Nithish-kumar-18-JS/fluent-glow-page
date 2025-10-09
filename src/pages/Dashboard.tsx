@@ -6,6 +6,7 @@ import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import Home from "@/components/dashboard/pages/Home";
 import Practice from "@/components/dashboard/pages/Practice";
 import Vocabulary from "@/components/dashboard/pages/Vocabulary";
+import Grammar from "@/components/dashboard/pages/Grammar";
 import Progress from "@/components/dashboard/pages/Progress";
 import Settings from "@/components/dashboard/pages/Settings";
 import Footer from "@/components/Footer";
@@ -87,6 +88,7 @@ const Dashboard = () => {
               <Route path="/" element={<Home />} />
               <Route path="/practice" element={<Practice />} />
               <Route path="/vocabulary" element={<Vocabulary />} />
+              <Route path="/grammar" element={<Grammar />} />
               <Route path="/progress" element={<Progress />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>

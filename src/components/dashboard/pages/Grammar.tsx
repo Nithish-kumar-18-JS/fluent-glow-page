@@ -7,62 +7,270 @@ import { motion } from "framer-motion";
 
 export default function Grammar() {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
-  const [grammarRules] = useState([
-    {
-      id: 1,
-      title: "Present Perfect",
-      level: "Intermediate",
-      rule: "Use present perfect for actions that happened at an unspecified time before now.",
-      formula: "have/has + past participle",
-      example: "I have visited Paris three times.",
-      saved: false
-    },
-    {
-      id: 2,
-      title: "Subject-Verb Agreement",
-      level: "Beginner",
-      rule: "The verb must agree with the subject in number and person.",
-      formula: "Singular subject + singular verb / Plural subject + plural verb",
-      example: "She walks to school. They walk to school.",
-      saved: false
-    },
-    {
-      id: 3,
-      title: "Conditional Sentences",
-      level: "Advanced",
-      rule: "Type 2 conditionals express hypothetical or unlikely situations in the present or future.",
-      formula: "If + past simple, would + base verb",
-      example: "If I had more time, I would learn Spanish.",
-      saved: false
-    },
-    {
-      id: 4,
-      title: "Modal Verbs",
-      level: "Intermediate",
-      rule: "Modal verbs express ability, possibility, permission, or obligation.",
-      formula: "Modal + base verb",
-      example: "You should study harder. She can speak three languages.",
-      saved: false
-    },
-    {
-      id: 5,
-      title: "Passive Voice",
-      level: "Advanced",
-      rule: "Use passive voice when the action is more important than who performed it.",
-      formula: "be + past participle",
-      example: "The book was written by Shakespeare.",
-      saved: false
-    },
-    {
-      id: 6,
-      title: "Articles (a, an, the)",
-      level: "Beginner",
-      rule: "Use 'a/an' for non-specific items, 'the' for specific items.",
-      formula: "a + consonant sound / an + vowel sound",
-      example: "I saw a dog. The dog was friendly.",
-      saved: false
-    }
-  ]);
+  const [grammarRules,setGrammarRules] = useState([
+  // =====================
+  // 🟢 BEGINNER LEVEL
+  // =====================
+  {
+    id: 1,
+    title: "Using 'am', 'is', 'are'",
+    level: "Beginner",
+    rule: "Used to describe yourself, people, and things in the present.",
+    formula: "Subject + am/is/are + complement",
+    example: "I am a student. She is tired. They are friends.",
+    speakingTip: "Use contractions in speech — 'I’m', 'He’s', 'They’re'.",
+    saved: false
+  },
+  {
+    id: 2,
+    title: "Talking About Daily Routines",
+    level: "Beginner",
+    rule: "Use simple present tense to describe habits or routines.",
+    formula: "Subject + base verb (+s/es for he/she/it)",
+    example: "I wake up at 7. She goes to work by bus.",
+    speakingTip: "Add time expressions like 'every day', 'usually', 'in the morning'.",
+    saved: false
+  },
+  {
+    id: 3,
+    title: "Talking About the Present Moment",
+    level: "Beginner",
+    rule: "Use present continuous for actions happening now.",
+    formula: "am/is/are + verb-ing",
+    example: "I’m watching TV. They’re cooking dinner.",
+    speakingTip: "Use short answers in speech — 'Yeah, I am', 'No, I’m not'.",
+    saved: false
+  },
+  {
+    id: 4,
+    title: "Asking Simple Questions",
+    level: "Beginner",
+    rule: "Use question words (who, what, where, when, why, how).",
+    formula: "Wh + auxiliary + subject + verb",
+    example: "Where do you live? What are you doing?",
+    speakingTip: "Ask naturally — raise your tone at the end slightly.",
+    saved: false
+  },
+  {
+    id: 5,
+    title: "Talking About the Past",
+    level: "Beginner",
+    rule: "Use simple past for completed actions.",
+    formula: "Subject + past verb",
+    example: "I watched a movie yesterday. He went to school.",
+    speakingTip: "Use 'did' in questions: 'Did you go out?'",
+    saved: false
+  },
+  {
+    id: 6,
+    title: "Expressing Likes and Dislikes",
+    level: "Beginner",
+    rule: "Use 'like', 'love', 'don’t like', 'hate' + verb-ing.",
+    formula: "Subject + like/love/hate + verb-ing",
+    example: "I like reading. She doesn’t like swimming.",
+    speakingTip: "Add emotion: 'I really like it!' or 'I don’t like it at all!'",
+    saved: false
+  },
+  {
+    id: 7,
+    title: "Giving and Asking for Opinions",
+    level: "Beginner",
+    rule: "Use 'I think', 'I believe', 'In my opinion' to express ideas.",
+    formula: "I think + clause",
+    example: "I think English is important.",
+    speakingTip: "Practice agreeing/disagreeing: 'I agree', 'Not really'.",
+    saved: false
+  },
+  {
+    id: 8,
+    title: "Making Requests and Offers",
+    level: "Beginner",
+    rule: "Use 'Can', 'Could', 'Would' for polite speech.",
+    formula: "Can/Could/Would + you + base verb?",
+    example: "Can you help me? Would you like some coffee?",
+    speakingTip: "Be polite — smile, use 'please' and 'thank you'.",
+    saved: false
+  },
+
+  // =====================
+  // 🟡 INTERMEDIATE LEVEL
+  // =====================
+  {
+    id: 9,
+    title: "Talking About Experiences",
+    level: "Intermediate",
+    rule: "Use present perfect for life experiences.",
+    formula: "have/has + past participle",
+    example: "I’ve been to London. She’s never tried sushi.",
+    speakingTip: "Use contractions — 'I’ve', 'She’s', 'We’ve'.",
+    saved: false
+  },
+  {
+    id: 10,
+    title: "Future Plans and Intentions",
+    level: "Intermediate",
+    rule: "Use 'going to' for planned future actions.",
+    formula: "am/is/are + going to + base verb",
+    example: "I’m going to learn Spanish. They’re going to travel next month.",
+    speakingTip: "You can also use 'gonna' in casual speech.",
+    saved: false
+  },
+  {
+    id: 11,
+    title: "Talking About Abilities",
+    level: "Intermediate",
+    rule: "Use 'can', 'could', 'be able to' to express ability.",
+    formula: "Subject + can/could/be able to + base verb",
+    example: "I can drive. She could swim when she was five.",
+    speakingTip: "In speech, say 'I’m able to' for polite emphasis.",
+    saved: false
+  },
+  {
+    id: 12,
+    title: "Describing Situations",
+    level: "Intermediate",
+    rule: "Use 'there is/there are' and descriptive adjectives.",
+    formula: "There is/are + noun + adjective",
+    example: "There’s a big park near my house.",
+    speakingTip: "Add fillers naturally: 'You know', 'like', 'I mean'.",
+    saved: false
+  },
+  {
+    id: 13,
+    title: "Giving Suggestions and Advice",
+    level: "Intermediate",
+    rule: "Use 'should', 'ought to', 'had better' for advice.",
+    formula: "You should + base verb",
+    example: "You should eat more vegetables.",
+    speakingTip: "Say gently: 'Maybe you could...' for softer tone.",
+    saved: false
+  },
+  {
+    id: 14,
+    title: "Talking About Possibilities",
+    level: "Intermediate",
+    rule: "Use 'might', 'may', 'could' for uncertain situations.",
+    formula: "Subject + might/may/could + base verb",
+    example: "It might rain later. She could be tired.",
+    speakingTip: "Don’t overuse 'maybe' — mix it with modal verbs.",
+    saved: false
+  },
+  {
+    id: 15,
+    title: "Agreeing and Disagreeing",
+    level: "Intermediate",
+    rule: "Use phrases to express agreement or disagreement politely.",
+    formula: "I agree / I don’t think so / That’s true / Not really",
+    example: "A: It’s too cold today. B: I know, right!",
+    speakingTip: "Use your tone to sound natural — not robotic.",
+    saved: false
+  },
+  {
+    id: 16,
+    title: "Making Comparisons in Conversation",
+    level: "Intermediate",
+    rule: "Use 'as...as', 'more than', 'less than', 'the most'.",
+    formula: "X is more/less + adj + than Y",
+    example: "This coffee is better than that one.",
+    speakingTip: "Use naturally — 'It’s way better', 'Not as good'.",
+    saved: false
+  },
+
+  // =====================
+  // 🔴 ADVANCED LEVEL
+  // =====================
+  {
+    id: 17,
+    title: "Polite & Indirect Speech",
+    level: "Advanced",
+    rule: "Use indirect forms to sound more polite in conversation.",
+    formula: "I was wondering if... / Do you think you could...?",
+    example: "I was wondering if you could send me the file.",
+    speakingTip: "Use softer intonation to sound friendly.",
+    saved: false
+  },
+  {
+    id: 18,
+    title: "Using Conditionals in Conversation",
+    level: "Advanced",
+    rule: "Use 'if' clauses for real and hypothetical situations.",
+    formula: "If + clause, result clause",
+    example: "If I were you, I’d take that job.",
+    speakingTip: "In speech, shorten — 'If I were you, I’d...' (not 'I would').",
+    saved: false
+  },
+  {
+    id: 19,
+    title: "Talking About Hypothetical Situations",
+    level: "Advanced",
+    rule: "Use would/could/might + base verb for imaginary cases.",
+    formula: "If + past, would + base verb",
+    example: "If I won the lottery, I’d travel the world.",
+    speakingTip: "Say 'I’d' instead of 'I would' — sounds natural.",
+    saved: false
+  },
+  {
+    id: 20,
+    title: "Using Emphasis in Speech",
+    level: "Advanced",
+    rule: "Use stress and emphatic structures for strong feelings.",
+    formula: "do/does/did + base verb",
+    example: "I *do* like your idea! She *did* tell you!",
+    speakingTip: "Use tone and emotion — spoken English loves emphasis.",
+    saved: false
+  },
+  {
+    id: 21,
+    title: "Connected Speech & Contractions",
+    level: "Advanced",
+    rule: "Native speakers join words and reduce sounds.",
+    formula: "Wanna (want to), Gonna (going to), Gotta (got to)",
+    example: "I’m gonna call you later. Whatcha doing?",
+    speakingTip: "Learn rhythm and linking — record yourself!",
+    saved: false
+  },
+  {
+    id: 22,
+    title: "Conversation Fillers and Pauses",
+    level: "Advanced",
+    rule: "Use natural fillers to sound fluent, not robotic.",
+    formula: "like / you know / actually / basically / well",
+    example: "Well, you know, it’s kind of hard to say.",
+    speakingTip: "Don’t overuse them — keep it balanced.",
+    saved: false
+  },
+  {
+    id: 23,
+    title: "Using Tag Questions Naturally",
+    level: "Advanced",
+    rule: "Used to confirm or check agreement in speech.",
+    formula: "Statement + tag?",
+    example: "You’ve met her before, haven’t you?",
+    speakingTip: "Raise your tone if you’re not sure, fall if you expect 'yes'.",
+    saved: false
+  },
+  {
+    id: 24,
+    title: "Softening Statements",
+    level: "Advanced",
+    rule: "Use modifiers to sound more polite or less direct.",
+    formula: "a bit / kind of / sort of / maybe",
+    example: "It’s kind of expensive. Maybe we should wait.",
+    speakingTip: "Makes you sound natural, not too strong or rude.",
+    saved: false
+  },
+  {
+    id: 25,
+    title: "Idioms & Expressions in Speech",
+    level: "Advanced",
+    rule: "Use common idioms to sound fluent and natural.",
+    formula: "Idiomatic phrase + context",
+    example: "Break the ice, hit the books, piece of cake.",
+    speakingTip: "Use idioms only when you’re sure of their meaning.",
+    saved: false
+  }
+]);
+
 
   const [statsData] = useState([
     {
@@ -142,7 +350,7 @@ export default function Grammar() {
             className="group"
           >
             <GlassCard 
-              className={`p-0 h-72 cursor-pointer transition-all duration-500 transform-gpu ${
+              className={`p-0 h-[450px] cursor-pointer transition-all duration-500 transform-gpu ${
                 flippedCards.includes(index) ? 'rotateY-180' : ''
               }`}
               onClick={() => toggleCard(index)}
@@ -200,11 +408,11 @@ export default function Grammar() {
                       className="h-8"
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleMarkLearned(rule.id);
+                        // handleMarkLearned(rule.id);
                       }}
                     >
                       <CircleCheck className="h-4 w-4 mr-2" />
-                      Mark as Learned
+                        Practice
                     </GlassButton>
                   </div>
                 </div>

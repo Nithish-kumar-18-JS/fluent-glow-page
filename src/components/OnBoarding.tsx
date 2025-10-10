@@ -127,7 +127,7 @@ export default function OnBoarding({
             {q.type === "intro" && (
               <div className="flex flex-col items-center space-y-6">
                 <img src="/onBoardingBackground.jpg" alt="onBoardingBackground" className="w-[450px] h-full object-cover rounded-lg mt-10"/>
-                <p className="text-lg text-gray-300 text-center">
+                <p className="text-lg text-black text-center">
                   English AI tutor will guide you step by step. Let’s get started!
                 </p>
                 <GlassButton
